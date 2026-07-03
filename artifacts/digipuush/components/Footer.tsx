@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 
@@ -8,9 +9,13 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
           <div className="col-span-2 sm:col-span-1">
-            <span className="text-lg font-extrabold tracking-tight">
-              Digi<span className="text-orange">puush</span>
-            </span>
+            <Image
+              src="/logo/digipuush-logo-white.png"
+              alt="Digipuush"
+              width={2377}
+              height={867}
+              className="h-10 w-auto"
+            />
             <p className="mt-3 max-w-xs text-sm" style={{ color: "#a3adc2" }}>
               The AI-first digital marketing agency helping Indian brands get found on Google
               and cited by AI.

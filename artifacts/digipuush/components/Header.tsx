@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/site";
@@ -12,10 +13,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-extrabold tracking-tight text-navy">
-            Digi<span className="text-orange">puush</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo/digipuush-logo-orange.png"
+            alt="Digipuush"
+            width={150}
+            height={55}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
