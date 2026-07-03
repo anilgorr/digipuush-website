@@ -5,6 +5,8 @@ import { FAQSection } from "@/components/FAQSection";
 import { AuthorBox } from "@/components/AuthorBox";
 import { LastUpdated } from "@/components/LastUpdated";
 import { CTABanner } from "@/components/CTABanner";
+import { PlatformCloud } from "@/components/PlatformCloud";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 export const metadata: Metadata = {
   title: "GEO vs SEO: What's the Difference?",
@@ -76,6 +78,8 @@ export default function GeoVsSeoPage() {
           <AuthorBox />
         </div>
       </article>
+      <PlatformCloud />
+      <TestimonialsSection />
       <CTABanner />
     </>
   );

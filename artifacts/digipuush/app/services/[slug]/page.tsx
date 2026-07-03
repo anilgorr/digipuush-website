@@ -7,6 +7,8 @@ import { FAQSection } from "@/components/FAQSection";
 import { CTABanner } from "@/components/CTABanner";
 import { JsonLd } from "@/components/JsonLd";
 import { MDXContent } from "@/components/MDXContent";
+import { PlatformCloud } from "@/components/PlatformCloud";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { getServiceSlugs, getServiceContent } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
@@ -87,6 +89,8 @@ export default async function ServicePage({
           <AuthorBox />
         </div>
       </article>
+      <PlatformCloud />
+      <TestimonialsSection />
       <CTABanner />
     </>
   );

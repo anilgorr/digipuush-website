@@ -13,6 +13,7 @@
     "clsx": "catalog:",
     "gray-matter": "^4.0.3",
     "lucide-react": "catalog:",
+    "motion": "^12.42.2",
     "next": "^15.1.6",
     "next-mdx-remote": "^5.0.0",
     "react": "catalog:",

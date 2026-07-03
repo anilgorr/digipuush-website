@@ -1,1 +1,2 @@
 - [Next.js 15 dynamic route params](nextjs15-async-params.md) — `params`/`searchParams` are async Promises; must `await` in both page component and `generateMetadata`.
+- [Animated components on SSG/AEO site](ssg-animated-components.md) — count-up/animated components must render final value in SSR HTML, not 0, or JS-less AI crawlers index wrong claims.

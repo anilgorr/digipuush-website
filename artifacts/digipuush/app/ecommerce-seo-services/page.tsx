@@ -4,6 +4,8 @@ import { FAQSection } from "@/components/FAQSection";
 import { AuthorBox } from "@/components/AuthorBox";
 import { LastUpdated } from "@/components/LastUpdated";
 import { CTABanner } from "@/components/CTABanner";
+import { PlatformCloud } from "@/components/PlatformCloud";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 export const metadata: Metadata = {
   title: "eCommerce SEO Services | Digipuush",
@@ -74,6 +76,8 @@ export default function EcommerceSeoPage() {
           <AuthorBox />
         </div>
       </article>
+      <PlatformCloud />
+      <TestimonialsSection />
       <CTABanner />
     </>
   );

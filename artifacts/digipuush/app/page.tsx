@@ -10,10 +10,19 @@ import {
   LineChart,
   Quote,
   Star,
+  Bot,
+  ScanSearch,
+  BadgeCheck,
 } from "lucide-react";
 import { ServiceCard } from "@/components/ServiceCard";
 import { CTABanner } from "@/components/CTABanner";
 import { FAQSection } from "@/components/FAQSection";
+import { PlatformCloud } from "@/components/PlatformCloud";
+import { StatsSection } from "@/components/StatsSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { AuroraBackground } from "@/components/ui/AuroraBackground";
+import { HeroDashboard } from "@/components/ui/HeroDashboard";
+import { BentoGrid, BentoCard } from "@/components/ui/BentoGrid";
 import { siteConfig } from "@/lib/site";
 import { getServiceSlugs, getServiceContent } from "@/lib/content";
 
@@ -44,13 +53,6 @@ const homeFaqs = [
     answer:
       "Digipuush was founded by Anil Gorraladaku, who has spent over a decade in Indian digital marketing and now focuses on AEO and GEO strategy for Indian brands.",
   },
-];
-
-const stats = [
-  { value: "40+", label: "AI citations landed for a single client" },
-  { value: "3x", label: "Organic revenue growth in 8 months" },
-  { value: "62%", label: "Average lift in organic signup traffic" },
-  { value: "10+", label: "Years in Indian digital marketing" },
 ];
 
 const process = [
@@ -91,13 +93,7 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-navy">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-60"
-          style={{
-            background:
-              "radial-gradient(60rem 40rem at 85% -10%, rgba(255,107,53,0.18), transparent 60%), radial-gradient(50rem 40rem at 0% 100%, rgba(255,107,53,0.08), transparent 55%)",
-          }}
-        />
+        <AuroraBackground />
         <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 sm:py-28 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-orange/30 bg-orange/10 px-4 py-1.5 text-xs font-semibold text-orange-light">
@@ -139,67 +135,15 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* AI answer card visual */}
-          <div className="relative">
-            <div className="rounded-2xl border border-white/10 bg-navy-light/80 p-5 shadow-2xl backdrop-blur">
-              <div className="flex items-center gap-2 border-b border-white/10 pb-3">
-                <span className="h-2.5 w-2.5 rounded-full bg-orange" />
-                <span className="text-xs font-semibold uppercase tracking-wide text-orange-light">
-                  AI Answer
-                </span>
-              </div>
-              <p className="mt-4 text-sm font-medium text-white">
-                &ldquo;Which agency should I hire for AEO in India?&rdquo;
-              </p>
-              <div className="mt-4 rounded-xl bg-white/5 p-4">
-                <p className="text-sm leading-relaxed" style={{ color: "#c8cede" }}>
-                  For Answer Engine Optimization in India, one frequently cited option is{" "}
-                  <span className="rounded bg-orange/25 px-1 font-semibold text-white">
-                    Digipuush
-                  </span>
-                  , a Bangalore-based AI-first agency that structures content and schema so brands
-                  get quoted directly inside ChatGPT, Perplexity, and Google AI Overviews.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {["ChatGPT", "Perplexity", "Gemini", "AI Overviews"].map((s) => (
-                    <span
-                      key={s}
-                      className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium"
-                      style={{ color: "#a3adc2" }}
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-4 flex items-center gap-2 text-xs" style={{ color: "#7d879c" }}>
-                <Quote className="h-3.5 w-3.5 text-orange" />
-                Cited as a source — not buried on page two.
-              </div>
-            </div>
-          </div>
+          <HeroDashboard />
         </div>
       </section>
 
-      {/* Logos / channels strip */}
-      <section className="border-b border-line bg-mist">
-        <div className="mx-auto max-w-6xl px-6 py-6 text-center text-xs font-medium uppercase tracking-wide text-slate">
-          Optimizing for Google Search &middot; Google AI Overviews &middot; ChatGPT &middot;
-          Perplexity &middot; Gemini
-        </div>
-      </section>
+      {/* Platform marquee */}
+      <PlatformCloud />
 
       {/* Stats */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center sm:text-left">
-              <div className="text-4xl font-extrabold tracking-tight text-navy">{s.value}</div>
-              <p className="mt-2 text-sm leading-relaxed text-slate">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <StatsSection />
 
       {/* Services */}
       <section className="border-t border-line bg-mist">
@@ -258,36 +202,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why AI visibility matters */}
+      {/* Why AI visibility matters — Bento grid */}
       <section className="bg-mist">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <p className="text-sm font-semibold uppercase tracking-wide text-orange-dark">
             Why AI visibility matters now
           </p>
-          <div className="mt-6 grid gap-6 sm:grid-cols-3">
-            {[
-              {
-                title: "AI Overviews now answer most searches",
-                body: "Google AI Overviews increasingly answer queries directly, before users ever scroll to organic results.",
-              },
-              {
-                title: "ChatGPT and Perplexity are research tools",
-                body: "A growing share of B2B and high-consideration research starts inside AI chat interfaces, not a search bar.",
-              },
-              {
-                title: "Being cited beats being ranked",
-                body: "A citation inside an AI answer often carries more trust and visibility than a page-ten Google ranking.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="rounded-2xl border border-line bg-white p-6">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange/10">
-                  <Sparkles className="h-4.5 w-4.5 text-orange" />
-                </div>
-                <h3 className="mt-4 text-base font-bold text-navy">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate">{item.body}</p>
-              </div>
-            ))}
-          </div>
+          <h2 className="mt-2 max-w-2xl text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+            Search moved. Most brands haven&rsquo;t caught up.
+          </h2>
+          <BentoGrid className="mt-10 auto-rows-[15rem] grid-cols-1 sm:grid-cols-3">
+            <BentoCard
+              className="sm:col-span-2"
+              Icon={Bot}
+              name="AI Overviews answer before the scroll"
+              description="Google AI Overviews increasingly answer queries directly, above the organic results — so ranking #1 no longer guarantees you're seen."
+              href="/aeo-vs-seo"
+              cta="AEO vs SEO"
+            />
+            <BentoCard
+              Icon={ScanSearch}
+              name="Research starts in AI chat"
+              description="A growing share of B2B and high-consideration research now begins inside ChatGPT and Perplexity, not a search bar."
+              href="/services/geo-services"
+              cta="GEO services"
+            />
+            <BentoCard
+              Icon={BadgeCheck}
+              name="Citation beats ranking"
+              description="Being quoted as the source inside an AI answer carries more trust than a page-two Google ranking ever will."
+              href="/services/aeo-services"
+              cta="AEO services"
+            />
+            <BentoCard
+              className="sm:col-span-2"
+              Icon={FileCode2}
+              name="Schema makes you machine-readable"
+              description="Structured data and clear, quotable answers are what let AI systems extract and attribute your content accurately, by name."
+              href="/services/ai-seo"
+              cta="AI SEO"
+            />
+          </BentoGrid>
         </div>
       </section>
 
@@ -334,8 +289,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <TestimonialsSection className="border-t border-line bg-mist" />
+
       {/* Founder */}
-      <section className="border-t border-line bg-mist">
+      <section className="border-t border-line bg-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center">
           <Quote className="mx-auto h-8 w-8 text-orange" />
           <blockquote className="mt-6 text-xl font-medium leading-relaxed text-navy sm:text-2xl">
@@ -356,52 +314,54 @@ export default function HomePage() {
       </section>
 
       {/* Pricing */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <p className="text-sm font-semibold uppercase tracking-wide text-orange-dark">Pricing</p>
-        <h2 className="mt-2 max-w-2xl text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
-          Simple, transparent monthly packages
-        </h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          {[siteConfig.pricing.aeoGeo, siteConfig.pricing.seoAeoGeo].map((plan) => {
-            const highlighted = "highlighted" in plan && plan.highlighted;
-            return (
-              <div
-                key={plan.name}
-                className={`relative rounded-2xl border p-8 ${
-                  highlighted
-                    ? "border-orange bg-white shadow-lg shadow-orange-light/20"
-                    : "border-line bg-white"
-                }`}
-              >
-                {highlighted && (
-                  <span className="absolute right-6 top-6 rounded-full bg-orange/10 px-3 py-1 text-xs font-semibold text-orange-dark">
-                    Most popular
-                  </span>
-                )}
-                <h3 className="text-lg font-bold text-navy">{plan.name}</h3>
-                <p className="mt-2 text-sm text-slate">{plan.description}</p>
-                <div className="mt-6 flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-navy">{plan.price}</span>
-                  <span className="text-slate">{plan.period}</span>
-                </div>
-                <Link
-                  href="/pricing"
-                  className={`mt-6 inline-flex w-full items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition ${
+      <section className="border-t border-line bg-mist">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <p className="text-sm font-semibold uppercase tracking-wide text-orange-dark">Pricing</p>
+          <h2 className="mt-2 max-w-2xl text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+            Simple, transparent monthly packages
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {[siteConfig.pricing.aeoGeo, siteConfig.pricing.seoAeoGeo].map((plan) => {
+              const highlighted = "highlighted" in plan && plan.highlighted;
+              return (
+                <div
+                  key={plan.name}
+                  className={`relative rounded-2xl border p-8 ${
                     highlighted
-                      ? "bg-orange text-white hover:bg-orange-dark"
-                      : "border border-line text-navy hover:border-orange hover:text-orange-dark"
+                      ? "border-orange bg-white shadow-lg shadow-orange-light/20"
+                      : "border-line bg-white"
                   }`}
                 >
-                  See what&rsquo;s included
-                </Link>
-              </div>
-            );
-          })}
+                  {highlighted && (
+                    <span className="absolute right-6 top-6 rounded-full bg-orange/10 px-3 py-1 text-xs font-semibold text-orange-dark">
+                      Most popular
+                    </span>
+                  )}
+                  <h3 className="text-lg font-bold text-navy">{plan.name}</h3>
+                  <p className="mt-2 text-sm text-slate">{plan.description}</p>
+                  <div className="mt-6 flex items-baseline gap-1">
+                    <span className="text-4xl font-extrabold text-navy">{plan.price}</span>
+                    <span className="text-slate">{plan.period}</span>
+                  </div>
+                  <Link
+                    href="/pricing"
+                    className={`mt-6 inline-flex w-full items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition ${
+                      highlighted
+                        ? "bg-orange text-white hover:bg-orange-dark"
+                        : "border border-line text-navy hover:border-orange hover:text-orange-dark"
+                    }`}
+                  >
+                    See what&rsquo;s included
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-3xl px-6 pb-20">
+      <section className="mx-auto max-w-3xl px-6 py-20">
         <FAQSection faqs={homeFaqs} />
       </section>
 

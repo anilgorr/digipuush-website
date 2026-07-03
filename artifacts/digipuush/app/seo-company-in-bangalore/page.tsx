@@ -4,6 +4,8 @@ import { FAQSection } from "@/components/FAQSection";
 import { AuthorBox } from "@/components/AuthorBox";
 import { LastUpdated } from "@/components/LastUpdated";
 import { CTABanner } from "@/components/CTABanner";
+import { PlatformCloud } from "@/components/PlatformCloud";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site";
 
@@ -94,6 +96,8 @@ export default function SeoBangalorePage() {
           <AuthorBox />
         </div>
       </article>
+      <PlatformCloud />
+      <TestimonialsSection />
       <CTABanner />
     </>
   );
