@@ -1,0 +1,118 @@
+Build a production-ready marketing website for Digipuush, a digital marketing agency in Bangalore serving clients across India. This replaces an old WordPress site at digipuush.com. The site's #1 business goal: rank in Google AND get cited by AI systems (ChatGPT, Perplexity, Gemini, Google AI Overviews) for AEO/GEO service queries in India.
+
+Stack
+
+
+Next.js 15+ (App Router), TypeScript, Tailwind CSS
+All content as MDX files in the repo (/content/services/, /content/blog/) with frontmatter: title, description, datePublished, dateModified, author, faqs (array of question/answer pairs)
+No CMS, no database, no client-side data fetching for content
+Static generation (SSG) for every page. Zero content rendered client-side — all text, numbers, and stats must be in the server-rendered HTML (AI crawlers don't execute JS)
+Deployable to Vercel
+
+
+Pages
+
+/                                → Homepage: "AI-First Digital Marketing Agency in India"
+/services/                       → Services hub
+/services/aeo-services/          → Answer Engine Optimization (primary money page)
+/services/geo-services/          → Generative Engine Optimization (primary money page)
+/services/ai-seo/                → Umbrella page linking to both above
+/services/seo/                   → Traditional SEO
+/services/website-development/
+/services/branding-creative/
+/services/social-media-marketing/
+/services/paid-marketing/
+/aeo-vs-seo/                     → Comparison page with a detailed comparison TABLE
+/geo-vs-seo/                     → Comparison page with a detailed comparison TABLE
+/seo-company-in-bangalore/       → Local SEO landing page (must live at exactly this URL)
+/ecommerce-seo-services/         → eCommerce SEO landing page (must live at exactly this URL)
+/pricing/
+/case-studies/                   → Grid of case study cards (placeholder content OK)
+/blog/                           → Blog index
+/blog/[slug]/                    → MDX blog posts
+/about/  /contact/  /thank-you/ (noindex)
+
+Content rules (critical — this is the whole point of the site)
+
+
+Every service page opens with a 40–60 word direct definition/answer as the first paragraph. Example for /services/aeo-services/: "Answer Engine Optimization (AEO) is the practice of structuring content so AI systems like ChatGPT, Perplexity and Google AI Overviews cite it when answering user questions. Digipuush offers combined AEO + GEO services across India, starting at ₹25,000/month."
+H2 headings phrased as real user queries: "What is AEO?", "How much do AEO services cost in India?", "AEO vs SEO: what's the difference?", "How long does GEO take to show results?" — each answered directly in the first 40–60 words under the heading.
+Every service page ends with an FAQ section (5–8 questions) rendered from frontmatter.
+Pricing is public, shown as a table on /pricing/ and both money pages:
+
+AEO + GEO package (content structuring, schema, citations, AI visibility monitoring): starts at ₹25,000/month
+SEO + AEO + GEO package (everything above + technical SEO, on-page, backlinks): starts at ₹40,000/month
+
+
+
+Author on all content: Anil Gorraladaku, Founder of Digipuush — author box component with bio and LinkedIn link on every service page and blog post.
+Every content page shows a visible "Last updated: [date]" from frontmatter dateModified.
+Page titles pattern: "AEO Services in India | Digipuush", "GEO Services in India | Digipuush", etc. Homepage title: "AI-First Digital Marketing Agency in India | Digipuush".
+Consistent contact info everywhere (footer + contact page): phone +91 9663445445, email anil.gorraladaku@digipuush.com, Bangalore, Karnataka, India.
+Write real, substantive draft copy for the AEO/GEO/ai-seo/comparison pages (not lorem ipsum). Placeholder copy is acceptable for branding/social/paid pages.
+
+
+Technical SEO/AEO requirements
+
+
+JSON-LD structured data via a reusable component:
+
+Site-wide: Organization + LocalBusiness (Bangalore address) + Person (Anil Gorraladaku, founder)
+Service pages: Service + FAQPage (from frontmatter faqs)
+Blog posts: Article with author, datePublished, dateModified
+All pages: BreadcrumbList
+
+
+
+robots.txt explicitly ALLOWING these bots: GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, anthropic-ai, Google-Extended, Bingbot, Googlebot. Disallow: /thank-you/, /api/.
+llms.txt at the root: markdown file describing Digipuush, its AEO/GEO services, pricing, and links to key pages.
+Dynamic sitemap.xml via Next.js sitemap route, and canonical URLs + Open Graph + Twitter meta on every page via the Metadata API.
+next/image for all images, font subsetting with next/font. Target Lighthouse 95+ on all scores. No sliders, no carousels, no animation libraries. Any stat/number rendered as plain server-side text (no count-up animations).
+Add these 301 redirects in next.config.js (from the old WordPress URLs):
+
+
+jsasync redirects() {
+  return [
+    { source: '/about-us', destination: '/about', permanent: true },
+    { source: '/about-us/our-team', destination: '/about', permanent: true },
+    { source: '/services/brand-strategy', destination: '/services/branding-creative', permanent: true },
+    { source: '/services/digital-marketing', destination: '/services', permanent: true },
+    { source: '/website-design', destination: '/services/website-development', permanent: true },
+    { source: '/website', destination: '/services/website-development', permanent: true },
+    { source: '/website-landing-page', destination: '/services/website-development', permanent: true },
+    { source: '/search-engine-optimization', destination: '/services/seo', permanent: true },
+    { source: '/social-media-marketing', destination: '/services/social-media-marketing', permanent: true },
+    { source: '/social-media-marketing-services', destination: '/services/social-media-marketing', permanent: true },
+    { source: '/influencer-marketing', destination: '/services/social-media-marketing', permanent: true },
+    { source: '/performance-marketing', destination: '/services/paid-marketing', permanent: true },
+    { source: '/ppc-services-pay-per-click', destination: '/services/paid-marketing', permanent: true },
+    { source: '/lead-generation-services', destination: '/services/paid-marketing', permanent: true },
+    { source: '/content-marketing', destination: '/services/geo-services', permanent: true },
+    { source: '/creative', destination: '/services/branding-creative', permanent: true },
+    { source: '/video-animation', destination: '/services/branding-creative', permanent: true },
+    { source: '/work', destination: '/case-studies', permanent: true },
+    { source: '/thank-you-web-development', destination: '/thank-you', permanent: true },
+    { source: '/test', destination: '/', permanent: true },
+    { source: '/home-2', destination: '/', permanent: true },
+    { source: '/blog-2', destination: '/blog', permanent: true },
+    { source: '/services-2', destination: '/services', permanent: true },
+    { source: '/facebook-ads-advertising-promotion-cost-india', destination: '/blog/facebook-ads-cost-india', permanent: true },
+    { source: '/what-is-digital-media-marketing', destination: '/blog/what-is-digital-marketing', permanent: true },
+    { source: '/online-reputation-management-services-orm-services', destination: '/blog/online-reputation-management-services', permanent: true },
+    { source: '/advantages-and-disadvantages-of-social-media', destination: '/blog', permanent: true },
+    { source: '/grow-your-business-with-digital-marketing', destination: '/blog', permanent: true },
+    { source: '/virtual-reality-companies-in-india', destination: '/blog', permanent: true },
+    { source: '/category/digital-marketing', destination: '/blog', permanent: true },
+    { source: '/nproject-category/:slug', destination: '/case-studies', permanent: true },
+  ];
+}
+
+Design
+
+Clean, modern, fast. Brand color: orange (#FF6B35 or similar, matching the existing Digipuush logo) on white/dark-navy. Professional B2B agency feel — think Vercel/Linear aesthetic, not a flashy WordPress theme. Mobile-first, sticky header with services dropdown, prominent "Get a Free AI Visibility Audit" CTA button in the header and as the main hero CTA. Contact form on /contact/ (name, email, phone, company, message) posting to an API route stub, redirecting to /thank-you/.
+
+Component checklist
+
+Header, Footer (with NAP + service links), AuthorBox, FAQSection (renders frontmatter faqs + injects FAQPage JSON-LD), ComparisonTable, PricingTable, JsonLd (generic schema injector), CTABanner, ServiceCard, BlogCard, Breadcrumbs (visible + schema), LastUpdated badge.
+
+Start by scaffolding the project and building the layout + homepage + /services/aeo-services/ page completely (with real copy, FAQs, schema), then generate the remaining pages following the same patterns.

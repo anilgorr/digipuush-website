@@ -1,0 +1,36 @@
+kind = "web"
+previewPath = "/"
+title = "Digipuush"
+version = "1.0.0"
+id = "artifacts/digipuush"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22078
+
+[services.development]
+run = "pnpm --filter @workspace/digipuush run dev"
+
+[services.production]
+
+[services.production.build]
+args = ["pnpm", "--filter", "@workspace/digipuush", "run", "build"]
+
+[services.production.build.env]
+NODE_ENV = "production"
+
+[services.production.run]
+args = ["pnpm", "--filter", "@workspace/digipuush", "run", "start"]
+
+[services.production.run.env]
+PORT = "22078"
+NODE_ENV = "production"
+
+[services.env]
+PORT = "22078"

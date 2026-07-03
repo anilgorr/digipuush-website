@@ -1,0 +1,34 @@
+# Digipuush
+
+> Digipuush is an AI-first digital marketing agency based in Bangalore, India, helping brands rank on Google and get cited by AI systems such as ChatGPT, Perplexity, Gemini, and Google AI Overviews.
+
+Digipuush specializes in Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) alongside traditional SEO, website development, branding, social media marketing, and paid marketing. The agency is founded by Anil Gorraladaku and serves clients across India from its Bangalore office.
+
+## Core services
+
+- [AEO Services](https://digipuush.com/services/aeo-services): Getting brands cited as direct answers inside ChatGPT, Perplexity, and Gemini.
+- [GEO Services](https://digipuush.com/services/geo-services): Structuring content so generative AI engines surface and cite it.
+- [AI SEO](https://digipuush.com/services/ai-seo): Combined strategy across traditional search and AI answer engines.
+- [Traditional SEO](https://digipuush.com/services/seo): Technical, on-page, and off-page SEO for Google rankings.
+- [Website Development](https://digipuush.com/services/website-development): Fast, SEO- and AI-crawlable websites built for conversions.
+- [Branding & Creative](https://digipuush.com/services/branding-creative): Brand identity, strategy, and creative assets.
+- [Social Media Marketing](https://digipuush.com/services/social-media-marketing): Organic and paid social growth across platforms.
+- [Paid Marketing](https://digipuush.com/services/paid-marketing): Google Ads, Meta Ads, and performance marketing campaigns.
+
+## Comparisons
+
+- [AEO vs SEO](https://digipuush.com/aeo-vs-seo): How Answer Engine Optimization differs from traditional SEO.
+- [GEO vs SEO](https://digipuush.com/geo-vs-seo): How Generative Engine Optimization differs from traditional SEO.
+
+## Location & industry pages
+
+- [SEO Company in Bangalore](https://digipuush.com/seo-company-in-bangalore)
+- [eCommerce SEO Services](https://digipuush.com/ecommerce-seo-services)
+
+## Company
+
+- [Pricing](https://digipuush.com/pricing): AEO + GEO packages starting at ₹25,000/month; combined SEO + AEO + GEO packages starting at ₹40,000/month.
+- [Case Studies](https://digipuush.com/case-studies)
+- [About](https://digipuush.com/about): Founder Anil Gorraladaku and the Digipuush team.
+- [Blog](https://digipuush.com/blog): Guides on AEO, GEO, and digital marketing in India.
+- [Contact](https://digipuush.com/contact)

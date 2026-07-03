@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0e1a;
+  --color-navy: #0d1526;
+  --color-navy-light: #131d33;
+  --color-orange: #ff6b35;
+  --color-orange-dark: #e85a2a;
+  --color-orange-light: #ffb08a;
+  --color-paper: #ffffff;
+  --color-mist: #f6f7f9;
+  --color-line: #e7e9ee;
+  --color-slate: #5b6472;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+::selection {
+  background-color: var(--color-orange);
+  color: white;
+}
+
+.prose-digipuush h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+}
+
+.prose-digipuush h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-navy);
+}
+
+.prose-digipuush p {
+  color: var(--color-slate);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  font-size: 1.0625rem;
+}
+
+.prose-digipuush ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-slate);
+}
+
+.prose-digipuush li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.prose-digipuush strong {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+.prose-digipuush a {
+  color: var(--color-orange-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

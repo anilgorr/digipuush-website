@@ -1,0 +1,1 @@
+- [Next.js 15 dynamic route params](nextjs15-async-params.md) — `params`/`searchParams` are async Promises; must `await` in both page component and `generateMetadata`.
