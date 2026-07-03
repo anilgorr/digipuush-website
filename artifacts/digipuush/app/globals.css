@@ -18,6 +18,16 @@
   --animate-marquee-vertical: marquee-vertical var(--duration, 40s) linear infinite;
   --animate-aurora: aurora 18s ease-in-out infinite alternate;
   --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-grid: grid 18s linear infinite;
+}
+
+@keyframes grid {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes marquee {

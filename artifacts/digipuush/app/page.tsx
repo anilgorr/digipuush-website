@@ -21,6 +21,7 @@ import { PlatformCloud } from "@/components/PlatformCloud";
 import { StatsSection } from "@/components/StatsSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
+import { RetroGrid } from "@/components/ui/RetroGrid";
 import { HeroDashboard } from "@/components/ui/HeroDashboard";
 import { BentoGrid, BentoCard } from "@/components/ui/BentoGrid";
 import { siteConfig } from "@/lib/site";
@@ -93,6 +94,7 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-navy">
+        <RetroGrid />
         <AuroraBackground />
         <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 sm:py-28 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
