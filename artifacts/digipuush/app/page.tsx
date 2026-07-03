@@ -8,7 +8,6 @@ import {
   FileCode2,
   TrendingUp,
   LineChart,
-  Quote,
   Star,
   Bot,
   ScanSearch,
@@ -291,27 +290,6 @@ export default function HomePage() {
 
       {/* Testimonials */}
       <TestimonialsSection className="border-t border-line bg-mist" />
-
-      {/* Founder */}
-      <section className="border-t border-line bg-white">
-        <div className="mx-auto max-w-4xl px-6 py-20 text-center">
-          <Quote className="mx-auto h-8 w-8 text-orange" />
-          <blockquote className="mt-6 text-xl font-medium leading-relaxed text-navy sm:text-2xl">
-            &ldquo;Well-ranked websites are getting skipped in AI answers because their content
-            isn&rsquo;t structured for machines to extract. We built Digipuush to close that gap
-            for Indian brands before it becomes a bigger disadvantage.&rdquo;
-          </blockquote>
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-navy text-lg font-bold text-white">
-              AG
-            </div>
-            <div className="text-left">
-              <div className="font-bold text-navy">{siteConfig.founder.name}</div>
-              <div className="text-sm text-slate">{siteConfig.founder.role}</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Pricing */}
       <section className="border-t border-line bg-mist">
