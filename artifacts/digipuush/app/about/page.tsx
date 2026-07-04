@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABanner } from "@/components/CTABanner";
 import { JsonLd } from "@/components/JsonLd";
@@ -22,7 +22,7 @@ export default function AboutPage() {
       jobTitle: "Founder, Digipuush",
       description: founder.bio,
       url: `${siteConfig.url}/about`,
-      sameAs: [founder.linkedin],
+      sameAs: [founder.linkedin, founder.instagram],
     },
   ];
 
@@ -74,6 +74,15 @@ export default function AboutPage() {
             >
               <Linkedin className="h-4 w-4" />
               LinkedIn
+            </a>
+            <a
+              href={founder.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-orange-dark hover:underline"
+            >
+              <Instagram className="h-4 w-4" />
+              Instagram
             </a>
             <a
               href={`mailto:${siteConfig.contact.email}`}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -84,6 +84,26 @@ export function Footer() {
                 <span>{siteConfig.contact.address.full}</span>
               </li>
             </ul>
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                href={siteConfig.founder.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-white/70 transition hover:text-orange-light"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href={siteConfig.founder.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-white/70 transition hover:text-orange-light"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
 

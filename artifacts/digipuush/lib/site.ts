@@ -10,6 +10,7 @@ export const siteConfig = {
     role: "Founder, Digipuush",
     bio: "Anil Gorraladaku is the founder of Digipuush, an AI-first digital marketing agency based in Bangalore. He has spent over a decade helping Indian brands grow through search and, more recently, pioneering Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) strategies that get businesses cited by AI systems like ChatGPT, Perplexity, and Google AI Overviews.",
     linkedin: "https://www.linkedin.com/in/anilgorraladaku",
+    instagram: "https://www.instagram.com/anil_gorraladaku",
   },
   contact: {
     phone: "+91 9663445445",

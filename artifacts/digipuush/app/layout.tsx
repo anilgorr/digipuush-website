@@ -67,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       jobTitle: "Founder, Digipuush",
       description: siteConfig.founder.bio,
       url: `${siteConfig.url}/about`,
-      sameAs: [siteConfig.founder.linkedin],
+      sameAs: [siteConfig.founder.linkedin, siteConfig.founder.instagram],
       worksFor: {
         "@id": `${siteConfig.url}/#organization`,
       },
