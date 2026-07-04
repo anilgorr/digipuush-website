@@ -26,7 +26,7 @@ import { siteConfig } from "@/lib/site";
 import { getServiceSlugs, getServiceContent } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "AI-First Digital Marketing Agency in India",
+  title: { absolute: "AI-First Digital Marketing Agency in India | Digipuush" },
   description: siteConfig.description,
   alternates: { canonical: "/" },
   openGraph: {

@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Digipuush",
+  title: "Contact Us",
   description:
     "Get in touch with Digipuush for a free AI visibility audit covering Google search and AI answer engines like ChatGPT and Perplexity.",
   alternates: { canonical: "/contact" },

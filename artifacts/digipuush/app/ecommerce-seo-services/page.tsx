@@ -8,7 +8,7 @@ import { PlatformCloud } from "@/components/PlatformCloud";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 export const metadata: Metadata = {
-  title: "eCommerce SEO Services | Digipuush",
+  title: "eCommerce SEO Services",
   description:
     "Digipuush provides eCommerce SEO services covering category and product page optimization, technical SEO, and AI shopping visibility for Indian online stores.",
   alternates: { canonical: "/ecommerce-seo-services" },

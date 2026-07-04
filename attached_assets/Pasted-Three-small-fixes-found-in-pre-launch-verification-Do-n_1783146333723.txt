@@ -1,0 +1,44 @@
+Three small fixes found in pre-launch verification. Do not restructure anything else — no URL, schema, or content changes beyond what's listed.
+
+1. Fix duplicated "| Digipuush" in page titles
+
+Several pages render <title> with the brand twice, e.g. "SEO Company in Bangalore | Digipuush | Digipuush" — same on all 3 case study pages and /ecommerce-seo-services. Cause: the page-level title already contains "| Digipuush" AND the root layout's Metadata template appends it again.
+
+
+Fix it at the source: keep the title.template: '%s | Digipuush' in the root layout, and strip "| Digipuush" from every page-level and MDX frontmatter title that contains it.
+After the fix, grep the built HTML output for "Digipuush | Digipuush" — must return zero matches across all 30 pages.
+
+
+2. Homepage title missing brand
+
+Homepage <title> is "AI-First Digital Marketing Agency in India" but og:title is "AI-First Digital Marketing Agency in India | Digipuush". Both must be exactly:
+
+AI-First Digital Marketing Agency in India | Digipuush
+
+(The homepage likely uses title.absolute or opts out of the template — make sure the template applies, or set the absolute title with the brand included. og:title and twitter:title must match.)
+
+3. Expand /services/geo-services to ≥1,800 words
+
+The page is ~1,580 words; the AEO page is 1,784. Add ONE new H2 section, phrased as a query, answered in its first 40–60 words then elaborated — do not touch the opening 50-word definition, URL, title, or existing sections/FAQs:
+
+"What tools and platforms does GEO optimization cover?" — cover ChatGPT, Perplexity, Gemini, Google AI Overviews, Copilot; explain that each engine sources differently (Perplexity leans on retrieval/citations, ChatGPT on training data + browsing, AI Overviews on Google's index) and that Digipuush tracks citations across all of them monthly. Include a small table: engine | how it picks sources | what we optimize.
+
+Update dateModified in the frontmatter. Final word count must land between 1,800 and 2,200.
+
+4. Contact form delivery (env var — manual step, document it)
+
+The deployed form returns 500 on valid submissions because RESEND_API_KEY is not set in Netlify. No code change needed. Add a prominent note at the top of README.md:
+
+
+⚠️ The contact form will fail in production until RESEND_API_KEY is set in Netlify → Site settings → Environment variables (then trigger a redeploy). Setting it in Replit has no effect on the Netlify deploy.
+
+
+
+Definition of done
+
+
+Zero occurrences of "Digipuush | Digipuush" in any rendered <title>.
+Homepage <title> and og:title both exactly "AI-First Digital Marketing Agency in India | Digipuush".
+/services/geo-services ≥1,800 words, opener/URL/existing FAQs untouched, dateModified bumped.
+README warns about the Netlify env var.
+npm run build passes with zero errors.

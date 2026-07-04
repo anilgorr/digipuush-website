@@ -1,5 +1,7 @@
 # Digipuush
 
+> ⚠️ **The contact form will fail in production (500 on valid submissions) until `RESEND_API_KEY` is set in Netlify → Site settings → Environment variables, followed by a redeploy.** Setting this variable in Replit has **no effect** on the Netlify deploy — it must be set in Netlify. Optionally set `CONTACT_FROM_EMAIL` once your sending domain is verified in Resend.
+
 AI-first digital marketing agency marketing site (Next.js 15, App Router, TypeScript, Tailwind CSS v4). SSG-only so AI crawlers can read every page without executing JavaScript.
 
 ## Commands

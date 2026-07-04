@@ -10,7 +10,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "SEO Company in Bangalore | Digipuush",
+  title: "SEO Company in Bangalore",
   description:
     "Digipuush is an SEO company in Bangalore helping local and national businesses rank higher on Google and get cited by AI search tools.",
   alternates: { canonical: "/seo-company-in-bangalore" },
