@@ -18,7 +18,7 @@ AI-first digital marketing agency marketing site (Next.js 15, App Router, TypeSc
 
 ## Environment variables
 
-The contact form (`/api/contact`) emails leads via [Resend](https://resend.com). Copy `.env.example` to `.env.local` for local development and set these values in **Netlify → Site settings → Environment variables** for production:
+The contact form (`/contact-submit`) emails leads via [Resend](https://resend.com). Copy `.env.example` to `.env.local` for local development and set these values in **Netlify → Site settings → Environment variables** for production:
 
 | Variable | Required | Description |
 | --- | --- | --- |
