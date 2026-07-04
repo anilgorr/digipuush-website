@@ -1,6 +1,6 @@
 # Digipuush
 
-> ⚠️ **The contact form will fail in production (500 on valid submissions) until `RESEND_API_KEY` is set in Netlify → Site settings → Environment variables, followed by a redeploy.** Setting this variable in Replit has **no effect** on the Netlify deploy — it must be set in Netlify. Optionally set `CONTACT_FROM_EMAIL` once your sending domain is verified in Resend.
+> ⚠️ **Form submissions are only captured on the deployed Netlify site, not in local/preview environments.** To receive an email for every submission, add a form notification in Netlify: **Site settings → Forms → Form notifications → Add notification → Email notification**.
 
 AI-first digital marketing agency marketing site (Next.js 15, App Router, TypeScript, Tailwind CSS v4). SSG-only so AI crawlers can read every page without executing JavaScript.
 
@@ -16,20 +16,21 @@ AI-first digital marketing agency marketing site (Next.js 15, App Router, TypeSc
 - `lib/site.ts` — NAP, founder info, pricing, nav (single source of truth)
 - `lib/content.ts` — content loaders
 
-## Environment variables
+## Forms
 
-The contact form (`/contact-submit`) emails leads via [Resend](https://resend.com). Copy `.env.example` to `.env.local` for local development and set these values in **Netlify → Site settings → Environment variables** for production:
+The contact and lead forms use [Netlify Forms](https://docs.netlify.com/manage/forms/setup/) — no API keys or environment variables are required.
 
-| Variable | Required | Description |
-| --- | --- | --- |
-| `RESEND_API_KEY` | Yes | Resend API key. Without it the contact route returns a graceful 500 and no email is sent. |
-| `CONTACT_FROM_EMAIL` | No | The "from" address for lead emails. Requires a verified domain in Resend. Defaults to `Digipuush Website <onboarding@resend.dev>`. |
+How it works:
 
-Notes:
+- `public/__forms.html` is a static file containing a hidden `contact` form with every field. Netlify's build bot scans it at deploy time to register the form. **Do not delete it** — without it Netlify won't detect the form and submissions will 404.
+- The React `ContactForm` and `LeadForm` components POST url-encoded data (via `lib/submit-form.ts`) to `/__forms.html` with a matching `form-name=contact`. Netlify intercepts these POSTs and stores each submission.
+- `website` is a honeypot field (declared via `netlify-honeypot="website"`); Netlify also runs its own spam filtering.
 
-- Setting `RESEND_API_KEY` only in Replit does **not** affect the deployed Netlify site — it must be set in Netlify's environment for production email to work.
-- In Resend test mode (before verifying a domain), emails are only delivered to the Resend account owner's address. Verify the `digipuush.com` domain in Resend and set `CONTACT_FROM_EMAIL` to an address on that domain to deliver to the real inbox.
+Receiving submissions:
+
+- Every submission appears in the Netlify dashboard under **Forms → contact**.
+- To be emailed each submission, add a notification: **Site settings → Forms → Form notifications → Add notification → Email notification**, and enter the recipient address.
 
 ## Deployment
 
-Deployed to Netlify from GitHub. Build config lives in the repo-root `netlify.toml` (base `artifacts/digipuush`, `npm run build`, `@netlify/plugin-nextjs`). Do not add `output: 'export'` — the site uses a Route Handler for the contact form and relies on Netlify's Next.js runtime.
+Deployed to Netlify from GitHub. Build config lives in the repo-root `netlify.toml` (`pnpm --filter @workspace/digipuush run build`, publish `artifacts/digipuush/.next`, `@netlify/plugin-nextjs`). Do not add `output: 'export'` — Netlify Forms detection and the Next.js runtime rely on the standard build output.

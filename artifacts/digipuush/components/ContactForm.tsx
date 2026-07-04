@@ -1,19 +1,15 @@
 "use client";
 
-import { useState, useRef, useEffect, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import { submitToNetlifyForms } from "@/lib/submit-form";
 
 export function ContactForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const renderedAt = useRef<number>(0);
-
-  useEffect(() => {
-    renderedAt.current = Date.now();
-  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -29,22 +25,11 @@ export function ContactForm() {
       company: String(data.get("company") ?? ""),
       message: String(data.get("message") ?? ""),
       website: String(data.get("website") ?? ""),
-      renderedAt: renderedAt.current,
       source: "Contact page",
     };
 
     try {
-      const res = await fetch("/contact-submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body?.error ?? "Something went wrong. Please try again.");
-      }
-
+      await submitToNetlifyForms(payload);
       router.push("/thank-you");
     } catch (err) {
       setError(
@@ -55,7 +40,15 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="website"
+      onSubmit={handleSubmit}
+      className="space-y-5"
+    >
+      <input type="hidden" name="form-name" value="contact" />
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="text-sm font-medium text-navy">

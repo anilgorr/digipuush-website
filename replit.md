@@ -15,7 +15,7 @@ An AI-first digital marketing agency marketing site (Bangalore, India), built to
 - pnpm workspaces, Node.js 24, TypeScript 5.9
 - Site: Next.js 15 (App Router), React, Tailwind CSS v4
 - Content: MDX via `next-mdx-remote/rsc`, frontmatter parsed with `gray-matter`
-- Forms: client `ContactForm` component posting to a Next.js Route Handler (`/api/contact`), Zod-validated
+- Forms: client `ContactForm`/`LeadForm` components submitting to Netlify Forms (POST url-encoded to `/__forms.html`, detected via the static `public/__forms.html` form). No API keys/route handler.
 
 ## Where things live
 
@@ -36,7 +36,7 @@ An AI-first digital marketing agency marketing site (Bangalore, India), built to
 
 - ~20 pages: homepage, services index + 8 individual service pages, blog index + posts, comparison pages (AEO vs SEO, GEO vs SEO), local/niche landing pages (SEO company in Bangalore, ecommerce SEO), pricing, case studies, about, contact, thank-you.
 - Sticky header with a services dropdown; orange-on-white/dark-navy Vercel/Linear-style visual design.
-- Contact form submits to `/api/contact` then redirects to `/thank-you`.
+- Contact/lead forms submit to Netlify Forms then redirect to `/thank-you`. Submissions appear in the Netlify dashboard (Forms tab); enable a form notification there to be emailed each one.
 
 ## User preferences
 

@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import { submitToNetlifyForms } from "@/lib/submit-form";
 
 export function LeadForm({
   source = "Lead form",
@@ -15,11 +16,6 @@ export function LeadForm({
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const renderedAt = useRef<number>(0);
-
-  useEffect(() => {
-    renderedAt.current = Date.now();
-  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -35,22 +31,11 @@ export function LeadForm({
       company: String(data.get("company") ?? ""),
       message: String(data.get("message") ?? "") || "Requested a free AI Visibility Audit.",
       website: String(data.get("website") ?? ""),
-      renderedAt: renderedAt.current,
       source,
     };
 
     try {
-      const res = await fetch("/contact-submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body?.error ?? "Something went wrong. Please try again.");
-      }
-
+      await submitToNetlifyForms(payload);
       router.push("/thank-you");
     } catch (err) {
       setError(
@@ -71,7 +56,15 @@ export function LeadForm({
             See exactly where your brand stands across Google, ChatGPT, Perplexity, and
             Gemini — and what it takes to get cited.
           </p>
-          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="website"
+            onSubmit={handleSubmit}
+            className="mt-6 space-y-4"
+          >
+            <input type="hidden" name="form-name" value="contact" />
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="lf-name" className="text-sm font-medium text-navy">
