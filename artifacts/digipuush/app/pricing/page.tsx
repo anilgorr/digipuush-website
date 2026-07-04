@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PricingTable } from "@/components/PricingTable";
 import { FAQSection } from "@/components/FAQSection";
+import { LeadForm } from "@/components/LeadForm";
 import { CTABanner } from "@/components/CTABanner";
 
 export const metadata: Metadata = {
@@ -50,6 +51,7 @@ export default function PricingPage() {
       <section className="mx-auto max-w-3xl px-6 pb-20">
         <FAQSection faqs={faqs} />
       </section>
+      <LeadForm source="Pricing page" />
       <CTABanner />
     </>
   );

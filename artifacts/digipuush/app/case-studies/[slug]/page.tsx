@@ -7,21 +7,16 @@ import { FAQSection } from "@/components/FAQSection";
 import { CTABanner } from "@/components/CTABanner";
 import { JsonLd } from "@/components/JsonLd";
 import { MDXContent } from "@/components/MDXContent";
-import { PlatformCloud } from "@/components/PlatformCloud";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { LeadForm } from "@/components/LeadForm";
-import { getServiceSlugs, getServiceContent } from "@/lib/content";
+import { getCaseStudySlugs, getCaseStudyContent } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
-const LEAD_FORM_SLUGS = new Set(["aeo-services", "geo-services"]);
-
 export function generateStaticParams() {
-  return getServiceSlugs().map((slug) => ({ slug }));
+  return getCaseStudySlugs().map((slug) => ({ slug }));
 }
 
 function getData(slug: string) {
   try {
-    return getServiceContent(slug);
+    return getCaseStudyContent(slug);
   } catch {
     return null;
   }
@@ -38,11 +33,11 @@ export async function generateMetadata({
   return {
     title: data.frontmatter.title,
     description: data.frontmatter.description,
-    alternates: { canonical: `/services/${slug}` },
+    alternates: { canonical: `/case-studies/${slug}` },
   };
 }
 
-export default async function ServicePage({
+export default async function CaseStudyPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -56,16 +51,21 @@ export default async function ServicePage({
   const jsonLd = [
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      name: heading,
+      "@type": "Article",
+      headline: heading,
       description: frontmatter.description,
-      provider: {
-        "@type": "LocalBusiness",
+      datePublished: frontmatter.datePublished,
+      dateModified: frontmatter.dateModified,
+      author: {
+        "@type": "Person",
+        name: frontmatter.author,
+      },
+      publisher: {
+        "@type": "Organization",
         name: siteConfig.name,
         url: siteConfig.url,
       },
-      areaServed: "IN",
-      url: `${siteConfig.url}/services/${slug}`,
+      mainEntityOfPage: `${siteConfig.url}/case-studies/${slug}`,
     },
   ];
 
@@ -75,13 +75,16 @@ export default async function ServicePage({
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
-          { label: heading, href: `/services/${slug}` },
+          { label: "Case Studies", href: "/case-studies" },
+          { label: heading, href: `/case-studies/${slug}` },
         ]}
       />
       <article className="mx-auto max-w-3xl px-6 py-16">
         <LastUpdated date={frontmatter.dateModified} />
-        <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+        <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-orange-dark">
+          {frontmatter.client}
+        </p>
+        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
           {heading}
         </h1>
         <div className="mt-8">
@@ -92,9 +95,6 @@ export default async function ServicePage({
           <AuthorBox />
         </div>
       </article>
-      <PlatformCloud />
-      <TestimonialsSection />
-      {LEAD_FORM_SLUGS.has(slug) && <LeadForm source={`${heading} page`} />}
       <CTABanner />
     </>
   );

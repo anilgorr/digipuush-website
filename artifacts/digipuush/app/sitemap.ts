@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
-import { getServiceSlugs, getServiceContent, getAllBlogPosts } from "@/lib/content";
+import {
+  getServiceSlugs,
+  getServiceContent,
+  getAllBlogPosts,
+  getAllCaseStudies,
+} from "@/lib/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -39,5 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...blogRoutes];
+  const caseStudyRoutes = getAllCaseStudies().map((cs) => ({
+    url: `${siteConfig.url}/case-studies/${cs.slug}`,
+    lastModified: new Date(cs.frontmatter.dateModified),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...caseStudyRoutes];
 }

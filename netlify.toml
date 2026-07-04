@@ -1,0 +1,9 @@
+# Build runs from the repo root so pnpm installs the whole workspace and
+# resolves `catalog:` specifiers (npm cannot). The publish dir points at the
+# Digipuush app's Next.js build output for Netlify's monorepo support.
+[build]
+  command = "pnpm --filter @workspace/digipuush run build"
+  publish = "artifacts/digipuush/.next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

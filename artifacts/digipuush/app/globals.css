@@ -104,9 +104,47 @@ body {
   color: var(--color-slate);
 }
 
+.prose-digipuush ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-slate);
+}
+
 .prose-digipuush li {
   margin-bottom: 0.5rem;
   line-height: 1.7;
+}
+
+.prose-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: 1rem;
+}
+
+.prose-digipuush table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.prose-digipuush thead {
+  background-color: var(--color-mist);
+}
+
+.prose-digipuush th {
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.prose-digipuush td {
+  padding: 0.75rem 1.25rem;
+  color: var(--color-slate);
+  border-top: 1px solid var(--color-line);
 }
 
 .prose-digipuush strong {

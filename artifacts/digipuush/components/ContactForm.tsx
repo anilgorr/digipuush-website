@@ -1,13 +1,19 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useRef, useEffect, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
+import { siteConfig } from "@/lib/site";
 
 export function ContactForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const renderedAt = useRef<number>(0);
+
+  useEffect(() => {
+    renderedAt.current = Date.now();
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -22,6 +28,9 @@ export function ContactForm() {
       phone: String(data.get("phone") ?? ""),
       company: String(data.get("company") ?? ""),
       message: String(data.get("message") ?? ""),
+      website: String(data.get("website") ?? ""),
+      renderedAt: renderedAt.current,
+      source: "Contact page",
     };
 
     try {
@@ -38,7 +47,9 @@ export function ContactForm() {
 
       router.push("/thank-you");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again.",
+      );
       setSubmitting(false);
     }
   }
@@ -71,11 +82,13 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="phone" className="text-sm font-medium text-navy">
-            Phone (optional)
+            Phone
           </label>
           <input
             id="phone"
             name="phone"
+            type="tel"
+            required
             className="mt-1.5 w-full rounded-lg border border-line px-3.5 py-2.5 text-sm outline-none focus:border-orange"
           />
         </div>
@@ -102,7 +115,20 @@ export function ContactForm() {
           className="mt-1.5 w-full rounded-lg border border-line px-3.5 py-2.5 text-sm outline-none focus:border-orange"
         />
       </div>
-      {error && <p className="text-sm text-red-600">{error}</p>}
+      {/* Honeypot — hidden from real users */}
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+      {error && (
+        <p className="text-sm text-red-600">
+          {error} You can also call us at{" "}
+          <a href={siteConfig.contact.phoneHref} className="font-semibold underline">
+            {siteConfig.contact.phone}
+          </a>
+          .
+        </p>
+      )}
       <button
         type="submit"
         disabled={submitting}

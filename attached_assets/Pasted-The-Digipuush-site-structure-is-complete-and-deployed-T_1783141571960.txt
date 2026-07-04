@@ -1,0 +1,96 @@
+The Digipuush site structure is complete and deployed. This phase fixes the three remaining gaps: a contact form that actually delivers leads, real case study detail pages, and deeper content on the money pages plus a supporting blog cluster. Do not restructure existing pages, URLs, or schema — extend them.
+
+1. Make the contact form actually work (highest priority)
+
+The current form on /contact/ posts to a stub and leads go nowhere.
+
+
+Wire the form to send email via Resend (resend npm package) from an App Router API route (/api/contact). Read the API key from process.env.RESEND_API_KEY — add it to .env.example and never hardcode it. Send to anil.gorraladaku@digipuush.com with reply-to set to the submitter's email.
+Fields stay: name, email, phone, company, message. Server-side validation (all except company required, email format checked).
+Spam protection: honeypot field (hidden input; reject if filled) + reject submissions faster than 3 seconds after page load. No CAPTCHA.
+On success redirect to /thank-you/ (already exists, noindex). On failure show an inline error with the phone number +91 9663445445 as fallback.
+Also add a compact version of this form as a LeadForm component at the bottom of /services/aeo-services/, /services/geo-services/, and /pricing/ — heading: "Get a Free AI Visibility Audit". Same API route.
+
+
+2. Case study detail pages
+
+/case-studies/ currently shows cards with no links. Build /case-studies/[slug]/ from MDX files in /content/case-studies/ and link the cards to them.
+
+Create 3 case studies (anonymized clients are fine — use industry labels, not fake company names):
+
+
+b2b-saas-ai-citations — B2B SaaS, Bangalore: 0 → 40+ AI citations in 5 months, 62% lift in organic signup traffic (this one already has stats on the homepage — reuse them exactly, numbers must match everywhere).
+ecommerce-seo-revenue — e-commerce brand: 3x organic revenue growth in 8 months (stat already on homepage).
+local-services-aeo — Bangalore local services business: cited in Google AI Overviews and ChatGPT for "near me"-style queries.
+
+
+Each page structure (this format is what AI engines cite):
+
+
+First 50 words: direct summary of client type, problem, and headline result.
+Sections as H2 queries: "What was the challenge?", "What did Digipuush do?", "What were the results?"
+A results TABLE (metric | before | after | timeframe).
+3–5 FAQ items via the existing FAQSection component (e.g. "How long did it take to see AI citations?").
+AuthorBox (Anil Gorraladaku), Last updated date, Breadcrumbs — same components as service pages.
+Schema: Article + FAQPage + BreadcrumbList via the existing JsonLd component.
+
+
+3. Deepen the two money pages
+
+/services/aeo-services/ and /services/geo-services/ are ~900 words. Expand each to 1,800–2,200 words WITHOUT touching the opening 50-word definition, URL, title, or existing FAQs. Add new H2 sections phrased as queries, each answered in its first 40–60 words:
+
+For /services/aeo-services/:
+
+
+"How does the AEO process work?" (step-by-step, numbered list mirroring the 4-step homepage process)
+"What deliverables are included in AEO services?" (concrete monthly deliverables list)
+"How do you measure AEO results?" (citation tracking across ChatGPT/Perplexity/Gemini/AI Overviews, monthly reporting)
+"Which industries benefit most from AEO in India?" (B2B SaaS, e-commerce, healthcare, finance, local services)
+"AEO vs SEO: what's the difference?" (short answer + link to /aeo-vs-seo/)
+
+
+For /services/geo-services/:
+
+
+"How is GEO different from AEO?" (short answer + comparison table + link to /geo-vs-seo/)
+"What does a GEO engagement include?"
+"How long does GEO take to show results?" (honest: first citations typically 8–16 weeks)
+"How do generative engines choose what to cite?" (cite the Princeton GEO study, KDD 2024: adding citations +40% visibility, statistics +37%, keyword stuffing −10%)
+
+
+Add 2–3 new FAQ items per page to frontmatter (don't remove existing ones). Update dateModified.
+
+4. Blog cluster — 5 new posts
+
+MDX in /content/blog/, same frontmatter pattern (title, description, datePublished, dateModified, author, faqs). Each post: definition-first opening (40–60 words), query-phrased H2s, at least one table or numbered list, 4–6 FAQs, AuthorBox, Article + FAQPage schema, 2–3 internal links to the money pages.
+
+SlugWorking titleTarget querywhat-is-aeoWhat Is Answer Engine Optimization (AEO)? Complete 2026 Guide"what is aeo"what-is-geoWhat Is Generative Engine Optimization (GEO)?"what is geo / generative engine optimization"how-to-rank-in-chatgptHow to Get Your Brand Cited by ChatGPT in 2026"how to rank in chatgpt"aeo-services-cost-indiaHow Much Do AEO Services Cost in India? (2026 Pricing)"aeo services cost india" — include the ₹25,000/₹40,000 packages as a table plus market-range contextbest-aeo-agencies-indiaBest AEO Agencies in India (2026)"best aeo agencies in india" — honest comparison listicle; include Digipuush with disclosure ("this is our own service") plus 4–5 real criteria for evaluating any AEO agency
+
+1,200–1,800 words each. Real, substantive drafts — no lorem ipsum, no invented client names or fabricated statistics beyond the case-study numbers already published on the site.
+
+5. Small fixes while in there
+
+
+Homepage <title> says "…in Bangalore, India" but og:title says "…in India" — make both exactly: "AI-First Digital Marketing Agency in India | Digipuush".
+Blog index and sitemap.xml must automatically include the new posts and case studies (verify sitemap output).
+Update llms.txt: add links to the 3 case studies and the 5 new posts.
+Every new page: canonical URL, OG/Twitter meta via the Metadata API, server-rendered text only (no client-side content fetching), Lighthouse 95+ maintained.
+
+
+Deployment target: Netlify (via GitHub), not Vercel
+
+
+The site deploys to Netlify from a GitHub repo. Add a netlify.toml at the root with command = "npm run build" and publish handled by the Netlify Next.js runtime (auto-detected — do not set a publish dir manually, do not add output: 'export').
+The /api/contact route must be a standard App Router route handler — the Netlify Next runtime runs it as a serverless function automatically. No Vercel-specific packages or config anywhere.
+RESEND_API_KEY is read from the environment. Document in the README that it must be set in Netlify → Site settings → Environment variables (setting it only in Replit does nothing in production).
+Keep redirects in next.config.js as they are — they already work on Netlify.
+
+
+Definition of done
+
+
+Submitting /contact/ delivers an email and lands on /thank-you/; empty honeypot passes, filled honeypot is rejected.
+/case-studies/ cards link to 3 live detail pages with results tables and FAQ schema.
+Both money pages ≥1,800 words, existing URLs/titles/openers unchanged.
+5 new blog posts live, in the blog index, sitemap.xml, and llms.txt.
+npm run build passes with zero errors; no page renders content client-side.

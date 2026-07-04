@@ -1,2 +1,2 @@
-- [Next.js 15 dynamic route params](nextjs15-async-params.md) — `params`/`searchParams` are async Promises; must `await` in both page component and `generateMetadata`.
-- [Animated components on SSG/AEO site](ssg-animated-components.md) — count-up/animated components must render final value in SSR HTML, not 0, or JS-less AI crawlers index wrong claims.
+- [Dev build vs bash build collision](dev-build-collision.md) — running `npm run build` from bash clobbers the dev workflow's `.next`; restart the dev workflow after or the preview 500s.
+- [Netlify + pnpm workspace deploy](netlify-pnpm-deploy.md) — must build from repo root with pnpm (npm can't resolve `catalog:`); publish the nested app's `.next`.
