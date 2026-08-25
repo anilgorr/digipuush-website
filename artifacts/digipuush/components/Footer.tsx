@@ -20,6 +20,9 @@ export function Footer() {
               The AI-first digital marketing agency helping Indian brands get found on Google
               and cited by AI.
             </p>
+            <p className="mt-4 text-xs" style={{ color: "#7d879c" }}>
+              Digipuush is a brand of eCom Mantraa
+            </p>
           </div>
 
           <div>
