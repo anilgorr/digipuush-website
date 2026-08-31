@@ -19,6 +19,7 @@ export type ServiceFrontmatter = {
 export type BlogFrontmatter = {
   title: string;
   description: string;
+  takeaways?: string;
   datePublished: string;
   dateModified: string;
   author: string;

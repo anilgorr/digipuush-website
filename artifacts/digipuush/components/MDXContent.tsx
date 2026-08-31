@@ -1,8 +1,13 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
+import { slugifyHeading } from "./ArticleTools";
 
 const components = {
-  h2: (props: React.ComponentProps<"h2">) => <h2 {...props} />,
+  h2: ({ children, ...props }: React.ComponentProps<"h2">) => (
+    <h2 id={slugifyHeading(String(children))} {...props}>
+      {children}
+    </h2>
+  ),
   h3: (props: React.ComponentProps<"h3">) => <h3 {...props} />,
   p: (props: React.ComponentProps<"p">) => <p {...props} />,
   ul: (props: React.ComponentProps<"ul">) => <ul {...props} />,

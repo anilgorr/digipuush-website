@@ -6,7 +6,8 @@ import { AuthorBox } from "@/components/AuthorBox";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
 import { MDXContent } from "@/components/MDXContent";
-import { getBlogSlugs, getBlogContent } from "@/lib/content";
+import { ArticleTools, getArticleHeadings } from "@/components/ArticleTools";
+import { getBlogSlugs, getBlogContent, getAllBlogPosts } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -63,6 +64,7 @@ export default async function BlogPostPage({
         name: siteConfig.name,
         url: siteConfig.url,
       },
+      image: `${siteConfig.url}/opengraph.jpg`,
       mainEntityOfPage: `${siteConfig.url}/blog/${slug}`,
     },
   ];
@@ -83,8 +85,34 @@ export default async function BlogPostPage({
           {frontmatter.title}
         </h1>
         <div className="mt-8">
+          <ArticleTools
+            takeaways={
+              frontmatter.takeaways ??
+              `${frontmatter.description} Digipuush explains the practical steps, trade-offs, and questions that matter for Indian businesses.`
+            }
+            headings={getArticleHeadings(content)}
+          />
           <MDXContent source={content} />
         </div>
+        <nav aria-label="Related articles" className="not-prose mt-12 border-t border-line pt-8">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-orange-dark">
+            Related reading
+          </p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            {getAllBlogPosts()
+              .filter((post) => post.slug !== slug)
+              .slice(0, 3)
+              .map((post) => (
+                <a
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="rounded-xl border border-line p-4 text-sm font-semibold text-navy transition hover:border-orange hover:text-orange-dark"
+                >
+                  {post.frontmatter.title}
+                </a>
+              ))}
+          </div>
+        </nav>
         {frontmatter.faqs && <FAQSection faqs={frontmatter.faqs} />}
         <div className="mt-16">
           <AuthorBox />
