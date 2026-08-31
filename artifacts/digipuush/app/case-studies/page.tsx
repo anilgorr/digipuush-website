@@ -6,7 +6,7 @@ import { CTABanner } from "@/components/CTABanner";
 import { getAllCaseStudies } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Case Studies",
+  title: "SEO, AEO & GEO Case Studies",
   description:
     "See how Digipuush has helped Indian businesses grow organic traffic and AI citations through AEO, GEO, and SEO.",
   alternates: { canonical: "/case-studies" },

@@ -112,7 +112,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-xs sm:flex-row" style={{ borderColor: "#1c2740", color: "#7d879c" }}>
           <p>&copy; {new Date().getFullYear()} Digipuush. All rights reserved.</p>
-          <p>Bangalore, Karnataka, India</p>
+          <p>{siteConfig.contact.address.full}</p>
         </div>
       </div>
     </footer>

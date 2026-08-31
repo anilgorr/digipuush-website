@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Quote, TrendingUp } from "lucide-react";
+import { Quote, Sparkles } from "lucide-react";
 
 const bars = [
   { label: "ChatGPT", pct: 92 },
@@ -25,11 +25,14 @@ export function HeroDashboard() {
             AI Visibility Dashboard
           </span>
         </div>
-        <span className="inline-flex items-center gap-1 rounded-full bg-green-500/15 px-2 py-0.5 text-[11px] font-semibold text-green-400">
-          <TrendingUp className="h-3 w-3" />
-          Live
+        <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-white/70">
+          <Sparkles className="h-3 w-3" />
+          Illustration
         </span>
       </div>
+      <p className="mt-3 text-[10px] leading-relaxed text-white/45">
+        Illustrative example only. Percentages do not represent current client or Digipuush data.
+      </p>
 
       {/* Citation share bars */}
       <div className="mt-4 space-y-3">

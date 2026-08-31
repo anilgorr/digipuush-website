@@ -6,7 +6,6 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { CTABanner } from "@/components/CTABanner";
 import { PlatformCloud } from "@/components/PlatformCloud";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -32,25 +31,8 @@ const faqs = [
 ];
 
 export default function SeoBangalorePage() {
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      name: `${siteConfig.name} - SEO Company in Bangalore`,
-      url: `${siteConfig.url}/seo-company-in-bangalore`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Bangalore",
-        addressRegion: "Karnataka",
-        addressCountry: "IN",
-      },
-      areaServed: "Bangalore, Karnataka, India",
-    },
-  ];
-
   return (
     <>
-      <JsonLd data={jsonLd} />
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },

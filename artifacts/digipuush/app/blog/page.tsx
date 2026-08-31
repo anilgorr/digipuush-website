@@ -4,9 +4,10 @@ import { BlogCard } from "@/components/BlogCard";
 import { getAllBlogPosts } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "AEO, GEO & SEO Blog India",
   description:
     "Guides on AEO, GEO, SEO, and digital marketing in India from the Digipuush team.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

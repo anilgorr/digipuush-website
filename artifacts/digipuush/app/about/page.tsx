@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Digipuush & Anil Gorraladaku",
   description:
     "Digipuush is an AI-first digital marketing agency founded by Anil Gorraladaku, based in Bangalore, India.",
   alternates: { canonical: "/about" },

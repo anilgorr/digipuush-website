@@ -12,16 +12,26 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/anilgorraladaku",
     instagram: "https://www.instagram.com/anil_gorraladaku",
   },
+  social: {
+    linkedin: "https://linkedin.com/company/digipuush",
+  },
   contact: {
     phone: "+91 9663445445",
     phoneHref: "tel:+919663445445",
     email: "anil.gorraladaku@digipuush.com",
     address: {
+      street: "3rd Floor, No 21, Dollars Colony, Nagashetty Halli",
       locality: "Bangalore",
       region: "Karnataka",
+      postalCode: "560094",
       country: "India",
-      full: "Bangalore, Karnataka, India",
+      full:
+        "3rd Floor, No 21, Dollars Colony, Nagashetty Halli, Bangalore, Karnataka 560094, India",
     },
+  },
+  rating: {
+    value: 4.7,
+    count: 9,
   },
   pricing: {
     aeoGeo: {
@@ -87,6 +97,7 @@ export const siteConfig = {
     { label: "Paid Marketing", href: "/services/paid-marketing" },
   ],
   footerLocationLinks: [
+    { label: "GEO vs SEO", href: "/geo-vs-seo" },
     { label: "SEO Company in Bangalore", href: "/seo-company-in-bangalore" },
     { label: "eCommerce SEO Services", href: "/ecommerce-seo-services" },
   ],

@@ -4,9 +4,11 @@ import { PricingTable } from "@/components/PricingTable";
 import { FAQSection } from "@/components/FAQSection";
 import { LeadForm } from "@/components/LeadForm";
 import { CTABanner } from "@/components/CTABanner";
+import { JsonLd } from "@/components/JsonLd";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: "AEO, GEO & SEO Pricing India",
   description:
     "Digipuush pricing: AEO + GEO packages start at ₹25,000/month, and combined SEO + AEO + GEO packages start at ₹40,000/month.",
   alternates: { canonical: "/pricing" },
@@ -32,8 +34,48 @@ const faqs = [
 ];
 
 export default function PricingPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AggregateOffer",
+    name: "Digipuush SEO, AEO and GEO service packages",
+    url: `${siteConfig.url}/pricing`,
+    priceCurrency: "INR",
+    lowPrice: "25000",
+    highPrice: "40000",
+    offerCount: 2,
+    offers: [
+      {
+        "@type": "Offer",
+        name: siteConfig.pricing.aeoGeo.name,
+        price: "25000",
+        priceCurrency: "INR",
+        url: `${siteConfig.url}/pricing`,
+        availability: "https://schema.org/InStock",
+        itemOffered: {
+          "@type": "Service",
+          name: "AEO and GEO services",
+          description: siteConfig.pricing.aeoGeo.description,
+        },
+      },
+      {
+        "@type": "Offer",
+        name: siteConfig.pricing.seoAeoGeo.name,
+        price: "40000",
+        priceCurrency: "INR",
+        url: `${siteConfig.url}/pricing`,
+        availability: "https://schema.org/InStock",
+        itemOffered: {
+          "@type": "Service",
+          name: "SEO, AEO and GEO services",
+          description: siteConfig.pricing.seoAeoGeo.description,
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={jsonLd} />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Pricing", href: "/pricing" }]} />
       <section className="mx-auto max-w-6xl px-6 py-16">
         <p className="text-sm font-semibold uppercase tracking-wide text-orange-dark">Pricing</p>

@@ -232,8 +232,8 @@ export default function HomePage() {
               Icon={ScanSearch}
               name="Research starts in AI chat"
               description="A growing share of B2B and high-consideration research now begins inside ChatGPT and Perplexity, not a search bar."
-              href="/services/geo-services"
-              cta="GEO services"
+              href="/geo-vs-seo"
+              cta="Compare GEO vs SEO"
             />
             <BentoCard
               Icon={BadgeCheck}

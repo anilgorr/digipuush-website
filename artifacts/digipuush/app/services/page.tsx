@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Digital Marketing Services",
   description:
     "Explore Digipuush's full range of digital marketing services: AEO, GEO, AI SEO, traditional SEO, website development, branding, social media, and paid marketing.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {
