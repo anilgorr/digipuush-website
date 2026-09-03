@@ -31,7 +31,7 @@ export function ContactForm() {
 
     try {
       await submitToNetlifyForms(payload);
-      await trackOpenAiLeadCreated();
+      trackOpenAiLeadCreated();
       router.push("/thank-you");
     } catch (err) {
       setError(
