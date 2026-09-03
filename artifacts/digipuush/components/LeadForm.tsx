@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { submitToNetlifyForms } from "@/lib/submit-form";
+import { trackOpenAiLeadCreated } from "@/lib/track-conversion";
 
 export function LeadForm({
   source = "Lead form",
@@ -36,6 +37,7 @@ export function LeadForm({
 
     try {
       await submitToNetlifyForms(payload);
+      await trackOpenAiLeadCreated();
       router.push("/thank-you");
     } catch (err) {
       setError(

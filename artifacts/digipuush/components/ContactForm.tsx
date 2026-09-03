@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { submitToNetlifyForms } from "@/lib/submit-form";
+import { trackOpenAiLeadCreated } from "@/lib/track-conversion";
 
 export function ContactForm() {
   const router = useRouter();
@@ -30,6 +31,7 @@ export function ContactForm() {
 
     try {
       await submitToNetlifyForms(payload);
+      await trackOpenAiLeadCreated();
       router.push("/thank-you");
     } catch (err) {
       setError(
