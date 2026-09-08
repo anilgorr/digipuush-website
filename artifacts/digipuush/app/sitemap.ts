@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/geo-vs-seo",
     "/seo-company-in-bangalore",
     "/ecommerce-seo-services",
+    "/aeo-geo-consultation",
     "/pricing",
     "/case-studies",
     "/blog",
