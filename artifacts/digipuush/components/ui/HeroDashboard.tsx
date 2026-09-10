@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "motion/react";
+import type { CSSProperties } from "react";
 import { Quote, Sparkles } from "lucide-react";
 
 const bars = [
@@ -12,15 +10,10 @@ const bars = [
 
 export function HeroDashboard() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative rounded-2xl border border-white/10 bg-navy-light/80 p-5 shadow-2xl backdrop-blur"
-    >
+    <div className="hero-dashboard relative rounded-2xl border border-white/10 bg-navy-light/80 p-5 shadow-2xl backdrop-blur">
       <div className="flex items-center justify-between border-b border-white/10 pb-3">
         <div className="flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-orange" />
+          <span className="hero-status-dot h-2.5 w-2.5 rounded-full bg-orange" />
           <span className="text-xs font-semibold uppercase tracking-wide text-orange-light">
             AI Visibility Dashboard
           </span>
@@ -43,11 +36,14 @@ export function HeroDashboard() {
               <span className="font-semibold text-white">{b.pct}%</span>
             </div>
             <div className="h-2 overflow-hidden rounded-full bg-white/10">
-              <motion.div
-                className="h-full rounded-full bg-orange"
-                initial={{ width: 0 }}
-                animate={{ width: `${b.pct}%` }}
-                transition={{ duration: 0.9, delay: 0.3 + i * 0.12, ease: "easeOut" }}
+              <div
+                className="hero-citation-bar h-full rounded-full bg-orange"
+                style={
+                  {
+                    "--bar-scale": b.pct / 100,
+                    "--bar-delay": `${0.25 + i * 0.12}s`,
+                  } as CSSProperties
+                }
               />
             </div>
           </div>
@@ -69,6 +65,6 @@ export function HeroDashboard() {
           Cited as a source — not buried on page two.
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

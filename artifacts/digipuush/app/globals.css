@@ -59,6 +59,124 @@
   }
 }
 
+@keyframes hero-dashboard-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-bar-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(var(--bar-scale));
+  }
+}
+
+@keyframes hero-status-pulse {
+  50% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes testimonial-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-dashboard {
+  animation: hero-dashboard-enter 500ms ease-out 100ms both;
+}
+
+.hero-citation-bar {
+  transform: scaleX(var(--bar-scale));
+  transform-origin: left;
+  animation: hero-bar-fill 800ms ease-out var(--bar-delay) both;
+}
+
+.hero-status-dot {
+  animation: hero-status-pulse 2.4s ease-in-out 1s infinite;
+}
+
+.testimonial-enter {
+  animation: testimonial-enter 280ms ease-out both;
+}
+
+.motion-ready [data-motion-section] .motion-item {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+}
+
+.motion-ready [data-motion-section].is-motion-active .motion-item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 420ms ease-out var(--motion-delay, 0ms),
+    transform 420ms ease-out var(--motion-delay, 0ms);
+}
+
+@media (max-width: 640px) {
+  .hero-aurora-primary {
+    animation: none;
+    filter: none;
+    opacity: 0.18;
+    transform: translate3d(-12%, -8%, 0) scale(0.72);
+  }
+
+  .hero-aurora-secondary {
+    display: none;
+  }
+
+  .motion-ready [data-motion-section] .motion-item {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  .hero-status-dot {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-marquee,
+  .animate-marquee-vertical,
+  .animate-aurora,
+  .hero-dashboard,
+  .hero-citation-bar,
+  .hero-status-dot,
+  .testimonial-enter {
+    animation: none !important;
+  }
+
+  .hero-dashboard,
+  .testimonial-enter,
+  .motion-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-citation-bar {
+    transform: scaleX(var(--bar-scale)) !important;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

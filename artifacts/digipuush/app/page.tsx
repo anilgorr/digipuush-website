@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -22,6 +23,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { HeroDashboard } from "@/components/ui/HeroDashboard";
 import { BentoGrid, BentoCard } from "@/components/ui/BentoGrid";
+import { ViewportAnimations } from "@/components/ui/ViewportAnimations";
 import { siteConfig } from "@/lib/site";
 import { getServiceSlugs, getServiceContent } from "@/lib/content";
 
@@ -187,7 +189,7 @@ export default function HomePage() {
       </section>
 
       {/* Process */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
+      <section className="mx-auto max-w-6xl px-6 py-20" data-motion-section>
         <p className="text-sm font-semibold uppercase tracking-wide text-orange-dark">
           How we work
         </p>
@@ -195,8 +197,12 @@ export default function HomePage() {
           A repeatable system for getting you cited
         </h2>
         <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-          {process.map((p) => (
-            <div key={p.step} className="relative">
+          {process.map((p, index) => (
+            <div
+              key={p.step}
+              className="motion-item relative"
+              style={{ "--motion-delay": `${index * 70}ms` } as CSSProperties}
+            >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange/10 text-orange">
                 <p.icon className="h-5 w-5" />
               </div>
@@ -211,7 +217,7 @@ export default function HomePage() {
       </section>
 
       {/* Why AI visibility matters — Bento grid */}
-      <section className="bg-mist">
+      <section className="bg-mist" data-motion-section>
         <div className="mx-auto max-w-6xl px-6 py-20">
           <p className="text-sm font-semibold uppercase tracking-wide text-orange-dark">
             Why AI visibility matters now
@@ -221,7 +227,8 @@ export default function HomePage() {
           </h2>
           <BentoGrid className="mt-10 auto-rows-[15rem] grid-cols-1 sm:grid-cols-3">
             <BentoCard
-              className="sm:col-span-2"
+              className="motion-item sm:col-span-2"
+              style={{ "--motion-delay": "0ms" } as CSSProperties}
               Icon={Bot}
               name="AI Overviews answer before the scroll"
               description="Google AI Overviews increasingly answer queries directly, above the organic results — so ranking #1 no longer guarantees you're seen."
@@ -229,6 +236,8 @@ export default function HomePage() {
               cta="AEO vs SEO"
             />
             <BentoCard
+              className="motion-item"
+              style={{ "--motion-delay": "70ms" } as CSSProperties}
               Icon={ScanSearch}
               name="Research starts in AI chat"
               description="A growing share of B2B and high-consideration research now begins inside ChatGPT and Perplexity, not a search bar."
@@ -236,6 +245,8 @@ export default function HomePage() {
               cta="Compare GEO vs SEO"
             />
             <BentoCard
+              className="motion-item"
+              style={{ "--motion-delay": "140ms" } as CSSProperties}
               Icon={BadgeCheck}
               name="Citation beats ranking"
               description="Being quoted as the source inside an AI answer carries more trust than a page-two Google ranking ever will."
@@ -243,7 +254,8 @@ export default function HomePage() {
               cta="AEO services"
             />
             <BentoCard
-              className="sm:col-span-2"
+              className="motion-item sm:col-span-2"
+              style={{ "--motion-delay": "210ms" } as CSSProperties}
               Icon={FileCode2}
               name="Schema makes you machine-readable"
               description="Structured data and clear, quotable answers are what let AI systems extract and attribute your content accurately, by name."
@@ -255,7 +267,7 @@ export default function HomePage() {
       </section>
 
       {/* Case study highlight */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
+      <section className="mx-auto max-w-6xl px-6 py-20" data-motion-section>
         <div className="overflow-hidden rounded-3xl border border-line bg-navy">
           <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-2 lg:items-center">
             <div>
@@ -285,7 +297,10 @@ export default function HomePage() {
                 { value: "5 mo", label: "To first-page AI visibility" },
                 { value: "100%", label: "Focus on AI-era discovery" },
               ].map((m) => (
-                <div key={m.label} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div
+                  key={m.label}
+                  className="motion-item rounded-2xl border border-white/10 bg-white/5 p-5"
+                >
                   <div className="text-3xl font-extrabold text-orange">{m.value}</div>
                   <p className="mt-1.5 text-xs leading-relaxed" style={{ color: "#a3adc2" }}>
                     {m.label}
@@ -353,6 +368,7 @@ export default function HomePage() {
       </section>
 
       <CTABanner />
+      <ViewportAnimations />
     </>
   );
 }

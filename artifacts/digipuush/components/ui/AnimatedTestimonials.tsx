@@ -1,7 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 import type { Testimonial } from "@/lib/social";
 
@@ -13,6 +12,9 @@ export function AnimatedTestimonials({
   autoplay?: boolean;
 }) {
   const [active, setActive] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const inViewRef = useRef(false);
+  const [canAutoplay, setCanAutoplay] = useState(false);
 
   const next = useCallback(
     () => setActive((p) => (p + 1) % testimonials.length),
@@ -21,30 +23,44 @@ export function AnimatedTestimonials({
   const prev = () => setActive((p) => (p - 1 + testimonials.length) % testimonials.length);
 
   useEffect(() => {
-    if (!autoplay) return;
+    const node = containerRef.current;
+    if (!node || !autoplay) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        inViewRef.current = entry.isIntersecting;
+        setCanAutoplay(entry.isIntersecting && document.visibilityState === "visible");
+      },
+      { rootMargin: "120px 0px", threshold: 0.15 },
+    );
+    const onVisibilityChange = () =>
+      setCanAutoplay(inViewRef.current && document.visibilityState === "visible");
+    observer.observe(node);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
+  }, [autoplay]);
+
+  useEffect(() => {
+    if (!canAutoplay) return;
     const t = setInterval(next, 6000);
     return () => clearInterval(t);
-  }, [autoplay, next]);
+  }, [canAutoplay, next]);
 
   if (!testimonials.length) return null;
   const current = testimonials[active];
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <div ref={containerRef} className="mx-auto max-w-3xl">
       <Quote className="mx-auto h-9 w-9 text-orange" />
       <div className="relative mt-6 min-h-[11rem]">
-        <AnimatePresence mode="wait">
-          <motion.blockquote
-            key={active}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="text-center text-xl font-medium leading-relaxed text-navy sm:text-2xl"
-          >
-            &ldquo;{current.quote}&rdquo;
-          </motion.blockquote>
-        </AnimatePresence>
+        <blockquote
+          key={`quote-${active}`}
+          className="testimonial-enter text-center text-xl font-medium leading-relaxed text-navy sm:text-2xl"
+        >
+          &ldquo;{current.quote}&rdquo;
+        </blockquote>
       </div>
 
       <div className="mt-8 flex items-center justify-center gap-4">
@@ -56,19 +72,10 @@ export function AnimatedTestimonials({
           <ArrowLeft className="h-4 w-4" />
         </button>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="min-w-[12rem] text-center"
-          >
-            <div className="font-bold text-navy">{current.name}</div>
-            <div className="text-sm text-slate">{current.role}</div>
-          </motion.div>
-        </AnimatePresence>
+        <div key={`author-${active}`} className="testimonial-enter min-w-[12rem] text-center">
+          <div className="font-bold text-navy">{current.name}</div>
+          <div className="text-sm text-slate">{current.role}</div>
+        </div>
 
         <button
           onClick={next}

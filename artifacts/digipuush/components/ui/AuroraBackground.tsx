@@ -4,14 +4,14 @@ export function AuroraBackground({ className }: { className?: string }) {
   return (
     <div className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
       <div
-        className="absolute -left-1/4 -top-1/2 h-[60rem] w-[60rem] animate-aurora rounded-full opacity-40 blur-3xl"
+        className="hero-aurora-primary absolute -left-1/4 -top-1/2 h-[60rem] w-[60rem] animate-aurora rounded-full opacity-40 blur-3xl"
         style={{
           background:
             "radial-gradient(circle at center, rgba(255,107,53,0.35), transparent 60%)",
         }}
       />
       <div
-        className="absolute -right-1/4 top-1/4 h-[45rem] w-[45rem] animate-aurora rounded-full opacity-30 blur-3xl [animation-delay:-6s]"
+        className="hero-aurora-secondary absolute -right-1/4 top-1/4 h-[45rem] w-[45rem] animate-aurora rounded-full opacity-30 blur-3xl [animation-delay:-6s]"
         style={{
           background:
             "radial-gradient(circle at center, rgba(255,176,138,0.28), transparent 60%)",

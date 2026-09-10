@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { useInView, useMotionValue, useSpring } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export function NumberTicker({
@@ -21,11 +17,6 @@ export function NumberTicker({
   prefix?: string;
   suffix?: string;
 }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(direction === "down" ? value : 0);
-  const springValue = useSpring(motionValue, { damping: 60, stiffness: 100 });
-  const isInView = useInView(ref, { once: true, margin: "0px" });
-
   const format = (n: number) =>
     prefix +
     Intl.NumberFormat("en-US", {
@@ -34,24 +25,12 @@ export function NumberTicker({
     }).format(Number(n.toFixed(decimalPlaces))) +
     suffix;
 
-  useEffect(() => {
-    if (!isInView) return;
-    const t = setTimeout(() => {
-      motionValue.set(direction === "down" ? 0 : value);
-    }, delay * 1000);
-    return () => clearTimeout(t);
-  }, [motionValue, isInView, delay, value, direction]);
-
-  useEffect(() => {
-    const unsub = springValue.on("change", (latest) => {
-      if (ref.current) ref.current.textContent = format(latest);
-    });
-    return unsub;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [springValue, decimalPlaces, prefix, suffix]);
-
   return (
-    <span ref={ref} className={cn("inline-block tabular-nums", className)}>
+    <span
+      className={cn("inline-block tabular-nums", className)}
+      data-direction={direction}
+      data-delay={delay}
+    >
       {format(value)}
     </span>
   );

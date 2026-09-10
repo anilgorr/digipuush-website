@@ -1,0 +1,471 @@
+PERFORMANCE IS A NON-NEGOTIABLE REQUIREMENT.
+
+The animations must NOT meaningfully reduce the existing Lighthouse/PageSpeed performance of the DigiPuush homepage.
+
+Before implementing animations:
+
+1. Run Lighthouse against the existing homepage.
+2. Record the baseline mobile and desktop scores for:
+
+   * Performance
+   * Accessibility
+   * Best Practices
+   * SEO
+   * LCP
+   * CLS
+   * TBT
+3. Implement the animations.
+4. Run Lighthouse again under the same conditions.
+5. Compare before vs after.
+
+ACCEPTANCE CRITERIA
+
+Target:
+
+* Lighthouse Performance: 90+ on mobile
+* Lighthouse Performance: 95+ on desktop
+* LCP: <= 2.5 seconds
+* CLS: <= 0.1
+* TBT: <= 200ms
+* No new render-blocking resources caused by animations
+* No meaningful increase in initial page JavaScript
+* No animation-related layout shift
+* No animation that delays hero text, CTA or LCP element
+
+Most importantly:
+
+THE ANIMATIONS MUST NOT REDUCE THE EXISTING LIGHTHOUSE PERFORMANCE SCORE BY MORE THAN 2 POINTS.
+
+If any animation causes a larger regression:
+
+DO NOT ACCEPT THE REGRESSION.
+
+Optimize, simplify or remove that animation automatically.
+
+Performance has higher priority than animation complexity.
+
+==================================================
+STRICT IMPLEMENTATION RULE
+==========================
+
+Build the animations primarily using:
+
+HTML
+CSS
+SVG
+CSS keyframes
+CSS transitions
+
+Use React/JavaScript only when a state change cannot reasonably be achieved with CSS.
+
+DO NOT install Framer Motion just for these animations.
+
+DO NOT add GSAP.
+
+DO NOT add Lottie.
+
+DO NOT add animation libraries.
+
+DO NOT use GIFs.
+
+DO NOT use video.
+
+DO NOT use Canvas.
+
+DO NOT use WebGL.
+
+DO NOT add large JSON animation files.
+
+DO NOT add large JavaScript dependencies.
+
+The animations must behave like lightweight native webpage UI rather than embedded media.
+
+==================================================
+CSS ANIMATION RULES
+===================
+
+Prefer GPU-friendly properties:
+
+transform
+opacity
+
+Examples:
+
+transform: translateX()
+transform: translateY()
+transform: translate3d()
+transform: scaleX()
+opacity
+
+Avoid continuously animating:
+
+width
+height
+top
+left
+margin
+padding
+box-shadow
+filter
+blur
+background-position
+border-radius
+
+For progress bars:
+
+DO NOT animate width from 0% to 90%.
+
+Use:
+
+transform: scaleX()
+
+with:
+
+transform-origin: left;
+
+This avoids unnecessary layout calculations.
+
+==================================================
+HERO PERFORMANCE
+================
+
+The hero is especially important because it affects LCP.
+
+The hero headline, supporting copy and CTA must render immediately.
+
+DO NOT wait for JavaScript before displaying hero content.
+
+The animated dashboard must be secondary to the main hero content.
+
+Prefer server-rendered/static HTML for the initial dashboard state.
+
+Animation should begin only after the page has rendered.
+
+Do not:
+
+* fetch data for the animation
+* wait for API responses
+* dynamically load large animation files
+* preload animation-specific media
+* make animation JavaScript part of the critical rendering path
+
+The hero animation must NOT become the LCP bottleneck.
+
+==================================================
+ABOVE-THE-FOLD ANIMATION
+========================
+
+Keep above-the-fold animation extremely lightweight.
+
+For the AI Visibility demo:
+
+Use static HTML elements already rendered on page.
+
+CSS should animate:
+
+progress fills
+opacity
+small translate transitions
+status dots
+
+If sequential text states require JavaScript, use ONE lightweight controller for the entire hero animation.
+
+Do not create separate timers for every row.
+
+Do not continuously rerender the complete component.
+
+==================================================
+BELOW-THE-FOLD ANIMATIONS
+=========================
+
+Do NOT initialize every homepage animation at page load.
+
+For:
+
+How AI Finds Your Brand
+How We Work
+Citation Growth
+
+use IntersectionObserver.
+
+Only activate an animation when the section approaches the viewport.
+
+When it leaves the viewport for a meaningful period:
+
+pause/reset the animation.
+
+This prevents unnecessary CPU usage while users are reading another section.
+
+Where appropriate, below-the-fold components may be lazy-loaded.
+
+Do NOT lazy-load important SEO text.
+
+Only lazy-load animation logic.
+
+The actual text/content should remain available in rendered HTML.
+
+==================================================
+AI PLATFORM MARQUEE
+===================
+
+The marquee must be CSS-only.
+
+Do not use JavaScript timers.
+
+Structure:
+
+track
+→ duplicated platform items
+→ CSS translateX animation
+→ seamless loop
+
+Use:
+
+animation-timing-function: linear;
+
+Pause on hover where appropriate.
+
+No DOM updates should occur during the marquee animation.
+
+==================================================
+MOBILE PERFORMANCE
+==================
+
+Mobile performance has priority over desktop animation richness.
+
+For devices with smaller screens or constrained resources:
+
+reduce animation complexity.
+
+For example:
+
+Desktop:
+full sequential UI demonstration
+
+Mobile:
+fewer simultaneously animated elements
+shorter animation sequence
+no unnecessary decorative movement
+
+Do not simply shrink complex desktop animations into mobile.
+
+==================================================
+REDUCED MOTION
+==============
+
+Implement:
+
+@media (prefers-reduced-motion: reduce)
+
+For these users:
+
+* disable infinite marquee movement
+* disable looping motion
+* immediately display final dashboard values
+* display all useful information without requiring animation
+* remove unnecessary transitions
+
+==================================================
+OFFSCREEN OPTIMIZATION
+======================
+
+Use IntersectionObserver instead of scroll event listeners.
+
+DO NOT attach a continuous:
+
+window.addEventListener("scroll")
+
+for animation calculations.
+
+Do not calculate element positions every frame.
+
+Do not run animation loops when components are offscreen.
+
+==================================================
+JAVASCRIPT BUDGET
+=================
+
+Do not add an animation dependency.
+
+Keep custom animation JavaScript extremely small.
+
+Aim for animation-related JavaScript of roughly:
+
+< 15 KB gzipped
+
+and preferably substantially less.
+
+If the same effect can be achieved using CSS instead of JavaScript:
+
+USE CSS.
+
+==================================================
+SVG / ICON PERFORMANCE
+======================
+
+Use lightweight inline SVG where appropriate.
+
+Do not load large PNG/WebP files merely for decorative animation.
+
+Do not load multiple versions of platform logos unnecessarily.
+
+Reuse existing website assets wherever possible.
+
+Avoid very complex SVG path animations.
+
+Simple icon opacity/transform animations are preferred.
+
+==================================================
+LAYOUT SHIFT PREVENTION
+=======================
+
+Every animated component must have its final space reserved before animation starts.
+
+There must be no:
+
+text jumping
+card resizing
+content pushing downward
+late-loading animation containers
+
+Set appropriate dimensions/min-heights/aspect ratios where necessary.
+
+Target:
+
+CLS ≈ 0
+
+from the animation components.
+
+==================================================
+FONT PERFORMANCE
+================
+
+Do not introduce any additional font family.
+
+Use the existing DigiPuush fonts.
+
+Do not change font-loading strategy unless it improves performance.
+
+==================================================
+WILL-CHANGE
+===========
+
+Do NOT put:
+
+will-change: transform
+
+on dozens of elements permanently.
+
+Use will-change sparingly and only where it provides a measurable benefit.
+
+Too many promoted layers can hurt performance.
+
+==================================================
+CONTENT VISIBILITY
+==================
+
+For substantial below-the-fold visual sections, consider:
+
+content-visibility: auto;
+
+when compatible with the existing project.
+
+If used, reserve appropriate intrinsic dimensions to prevent layout shifts.
+
+Do not use it blindly on important above-the-fold content.
+
+==================================================
+NO NETWORK DEPENDENCY FOR DEMOS
+===============================
+
+All animated examples are visual demonstrations.
+
+Do NOT call:
+
+OpenAI API
+Gemini API
+Perplexity API
+external data APIs
+
+just to power the animation.
+
+Use deterministic local demo states.
+
+The animation should create ZERO recurring network requests.
+
+==================================================
+BATTERY / CPU USAGE
+===================
+
+Animations should not cause continuous high CPU usage.
+
+Avoid simultaneous infinite animations throughout the page.
+
+At any point, only the animations currently visible to the visitor should be active, except for the lightweight AI-platform marquee.
+
+If document.visibilityState becomes "hidden", pause JavaScript-driven looping animations where practical.
+
+==================================================
+FINAL PERFORMANCE GATE
+======================
+
+After implementation run Lighthouse again.
+
+Produce a comparison:
+
+BEFORE
+Performance:
+LCP:
+CLS:
+TBT:
+
+AFTER
+Performance:
+LCP:
+CLS:
+TBT:
+
+CHANGE
+Performance:
+LCP:
+CLS:
+TBT:
+
+If:
+
+Performance decreases >2 points
+
+OR
+
+LCP becomes >2.5s
+
+OR
+
+CLS becomes >0.1
+
+OR
+
+TBT becomes >200ms
+
+then optimize the implementation before considering the task complete.
+
+Simplification priority:
+
+1. Remove unnecessary JavaScript animation.
+2. Replace JS animation with CSS.
+3. Reduce number of simultaneously animated elements.
+4. Disable more animations when offscreen.
+5. Simplify SVG effects.
+6. Remove decorative animation.
+7. If necessary, remove the lowest-value animation entirely.
+
+Do not sacrifice Lighthouse performance merely to retain an animation.
+
+BUSINESS PRIORITY:
+
+1. Page speed
+2. SEO/AEO content availability
+3. Conversion usability
+4. Animation
+
+The final result should LOOK animated and premium while behaving technically like a lightweight static website.
