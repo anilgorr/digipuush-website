@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/aeo-geo-consultation",
     "/pricing",
     "/case-studies",
+    "/research",
+    "/research/ai-search-readiness-benchmark-2026",
     "/blog",
     "/about",
     "/contact",

@@ -312,6 +312,33 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Research highlight */}
+      <section className="border-y border-line bg-mist" data-motion-section>
+        <div className="mx-auto max-w-6xl px-6 py-14">
+          <div className="motion-item grid gap-6 rounded-2xl border border-line bg-white p-7 sm:p-9 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-orange-dark">
+                Original Research
+              </p>
+              <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-navy">
+                New: Digipuush AI Search Readiness Benchmark 2026
+              </h2>
+              <p className="mt-3 max-w-3xl leading-relaxed text-slate">
+                We analyzed 50 B2B websites across 15 readiness factors. 78% were classified as
+                Weak or Very Weak for AI Search Readiness.
+              </p>
+            </div>
+            <Link
+              href="/research/ai-search-readiness-benchmark-2026"
+              className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-orange-dark hover:underline"
+            >
+              Explore the Research
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <TestimonialsSection className="border-t border-line bg-mist" />
 

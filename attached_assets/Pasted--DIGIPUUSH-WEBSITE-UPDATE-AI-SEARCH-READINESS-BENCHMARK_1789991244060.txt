@@ -1,0 +1,1324 @@
+# DIGIPUUSH WEBSITE UPDATE — AI SEARCH READINESS BENCHMARK 2026
+
+We are adding an original research section to the existing DigiPuush website.
+
+IMPORTANT:
+
+Do NOT redesign the website.
+
+Do NOT change the existing visual identity.
+
+Do NOT rewrite unrelated pages.
+
+Do NOT create another AEO commercial landing page.
+
+Do NOT change existing URLs.
+
+Use the existing DigiPuush components, typography, spacing, header, footer, buttons and design system.
+
+Inspect the existing codebase before implementing anything.
+
+The objective is:
+
+1. Publish original DigiPuush research.
+2. Build topical authority around Answer Engine Optimization.
+3. Strengthen the existing DigiPuush page targeting **AEO services in India**.
+4. Prepare a canonical research source that an upcoming press release can cite.
+
+---
+
+# 1. IMPORTANT RESEARCH STATUS
+
+The study is:
+
+**DigiPuush AI Search Readiness Benchmark 2026**
+
+The first publication should use AGGREGATE findings only.
+
+Do NOT publish:
+
+- individual company scores
+- company rankings
+- Top 10 companies
+- Bottom 10 companies
+- claims criticizing named companies
+- actual ChatGPT rankings
+- Gemini rankings
+- Perplexity rankings.
+
+The company-level QA process is still ongoing.
+
+The public research page should therefore focus on aggregate and category-level findings.
+
+---
+
+# 2. APPROVED PUBLIC DATA SNAPSHOT
+
+Use the following research snapshot for the first publication:
+
+Companies analyzed:
+
+**50**
+
+Categories:
+
+**5**
+
+Readiness dimensions:
+
+**15**
+
+Average AI Search Readiness Score:
+
+**37.9 / 100**
+
+Median AI Search Readiness Score:
+
+**40.9 / 100**
+
+Weak or Very Weak:
+
+**39 of 50 companies**
+
+Percentage Weak or Very Weak:
+
+**78%**
+
+Strong or Very Strong:
+
+**0 companies**
+
+Category average readiness scores:
+
+Accounting & ERP Software:
+
+**47.5**
+
+Logistics & Fulfilment Software:
+
+**40.0**
+
+HRMS & Payroll Software:
+
+**39.8**
+
+Customer Support / Helpdesk Software:
+
+**31.8**
+
+CRM Software:
+
+**30.5**
+
+Treat these numbers as a frozen publication snapshot.
+
+Do not recalculate them from unrelated website data.
+
+Do not invent additional percentages or findings.
+
+---
+
+# 3. RESEARCH CLAIM LIMITATION
+
+This benchmark measures:
+
+**publicly accessible website characteristics associated with AI-search readiness.**
+
+It does NOT directly measure:
+
+- ranking in ChatGPT
+- ranking in Gemini
+- ranking in Perplexity
+- ranking in Google AI Mode
+- frequency of AI recommendations
+- likelihood that a specific AI engine will cite a company.
+
+This distinction must be clearly stated on the page.
+
+Do NOT make claims such as:
+
+"78% of companies are invisible in ChatGPT."
+
+That is unsupported.
+
+Allowed wording:
+
+**"78% of the websites analyzed were classified as Weak or Very Weak under the DigiPuush AI Search Readiness framework."**
+
+---
+
+# 4. CREATE A RESEARCH HUB
+
+Create:
+
+`/research`
+
+SEO title:
+
+**DigiPuush Research | AI Search, AEO & AI Visibility Studies**
+
+Meta description:
+
+**Original DigiPuush research on AI search, Answer Engine Optimization, AI visibility and how brands are preparing for answer-engine discovery.**
+
+H1:
+
+**DigiPuush Research**
+
+Intro:
+
+**Original research on how search is changing in the age of AI.**
+
+Supporting copy:
+
+DigiPuush publishes independent research on Answer Engine Optimization, AI search readiness, AI visibility and the way websites are adapting for answer engines.
+
+Display the first research card:
+
+### DigiPuush AI Search Readiness Benchmark 2026
+
+**50 B2B websites. 5 categories. 15 readiness factors.**
+
+**78% of the websites analyzed were classified as Weak or Very Weak for AI Search Readiness.**
+
+CTA:
+
+**Read the Benchmark →**
+
+Link:
+
+`/research/ai-search-readiness-benchmark-2026`
+
+Design the research hub so additional studies can be added later.
+
+---
+
+# 5. ADD RESEARCH TO SITE NAVIGATION
+
+Inspect the existing navigation.
+
+Add:
+
+**Research**
+
+linking to:
+
+`/research`
+
+Do not make it visually dominant over Services.
+
+Recommended order if compatible with the current navigation:
+
+Services  
+Case Studies  
+Research  
+Pricing  
+About / Contact
+
+Preserve current navigation architecture where possible.
+
+---
+
+# 6. CREATE MAIN RESEARCH PAGE
+
+URL:
+
+`/research/ai-search-readiness-benchmark-2026`
+
+Canonical URL:
+
+`https://digipuush.com/research/ai-search-readiness-benchmark-2026`
+
+SEO title:
+
+**AI Search Readiness Benchmark 2026 | DigiPuush Research**
+
+Meta description:
+
+**DigiPuush analyzed 50 Google-visible B2B websites across 15 AI search readiness factors. 78% scored Weak or Very Weak in the 2026 benchmark.**
+
+H1:
+
+**DigiPuush AI Search Readiness Benchmark 2026**
+
+Eyebrow:
+
+**Original Research · 2026**
+
+Hero statement:
+
+## **78% of B2B websites analyzed showed Weak or Very Weak AI Search Readiness**
+
+Supporting text:
+
+**DigiPuush analyzed 50 Google-visible B2B companies across five technology categories to assess how effectively their websites support AI discovery, extraction, understanding and citation.**
+
+Do not say:
+
+"78% of Indian businesses"
+
+or:
+
+"78% of all B2B websites."
+
+Always retain the sample qualification:
+
+**websites analyzed**
+
+or:
+
+**companies in the benchmark.**
+
+---
+
+# 7. HERO STAT CARDS
+
+Immediately below the hero show four metric cards:
+
+### 50
+**B2B websites analyzed**
+
+### 5
+**Technology categories**
+
+### 15
+**AI Search Readiness dimensions**
+
+### 37.9
+**Average readiness score / 100**
+
+Add a subtle source note:
+
+**Source: DigiPuush AI Search Readiness Benchmark 2026**
+
+---
+
+# 8. EXECUTIVE SUMMARY
+
+Add section:
+
+## Executive Summary
+
+Copy:
+
+**The DigiPuush AI Search Readiness Benchmark 2026 examines whether websites already visible in traditional Google Search are also structured in ways that make their information easier for AI-driven answer systems to discover, interpret, extract and attribute.**
+
+**Across the 50 websites analyzed, 39 — or 78% — were classified as Weak or Very Weak under the benchmark's predefined readiness framework. The average AI Search Readiness Score was 37.9 out of 100, with a median of 40.9.**
+
+**The results suggest that conventional search visibility and readiness for answer-engine retrieval should be evaluated as related but distinct areas of search strategy.**
+
+Important:
+
+Use "suggest" or similarly measured language.
+
+Do NOT claim causation.
+
+---
+
+# 9. KEY FINDINGS SECTION
+
+Create:
+
+## Key Findings
+
+Use visually strong cards or rows.
+
+### 78%
+**Weak or Very Weak**
+
+39 of the 50 websites analyzed fell into the Weak or Very Weak readiness classifications.
+
+### 37.9 / 100
+**Average readiness score**
+
+The mean AI Search Readiness Score across the benchmark.
+
+### 40.9 / 100
+**Median readiness score**
+
+Half of the analyzed websites scored below approximately this level and half above.
+
+### 0
+**Strong or Very Strong**
+
+None of the 50 websites reached the benchmark's Strong or Very Strong classification threshold in this publication snapshot.
+
+Add:
+
+**These results describe this defined 50-company sample and should not be generalized to all businesses or websites.**
+
+---
+
+# 10. READINESS DISTRIBUTION VISUAL
+
+Create a simple, accessible visualization showing:
+
+**78% Weak or Very Weak**
+
+Do not invent the exact split between Weak and Very Weak unless those numbers are already available in the approved public snapshot.
+
+Therefore:
+
+Display:
+
+**Weak + Very Weak: 78%**
+
+**Other classifications: 22%**
+
+Do not fabricate category counts inside the remaining 22%.
+
+Use an accessible HTML representation in addition to any chart.
+
+Charts must not be image-only.
+
+All core numbers must also appear as HTML text.
+
+---
+
+# 11. CATEGORY COMPARISON
+
+Create:
+
+## AI Search Readiness by Category
+
+Intro:
+
+**The benchmark covered five B2B software and technology categories. Average readiness varied substantially across the sectors analyzed.**
+
+Display:
+
+| Category | Average Score |
+| --- | ---: |
+| Accounting & ERP Software | 47.5 |
+| Logistics & Fulfilment Software | 40.0 |
+| HRMS & Payroll Software | 39.8 |
+| Customer Support / Helpdesk Software | 31.8 |
+| CRM Software | 30.5 |
+
+Use a horizontal bar chart if compatible with the current DigiPuush visual system.
+
+Also render the values in HTML so search engines and AI crawlers can read them without JavaScript.
+
+Do not label the first category:
+
+"best"
+
+or the last:
+
+"worst."
+
+Use descriptive wording only.
+
+---
+
+# 12. EXPLAIN WHAT AI SEARCH READINESS MEANS
+
+Add:
+
+## What Does AI Search Readiness Mean?
+
+Copy:
+
+**AI Search Readiness describes how clearly a website presents the entities, facts, answers, evidence and structure that automated search and answer systems can retrieve and interpret.**
+
+**It is not the same as an AI-platform ranking. The benchmark evaluates the website itself rather than measuring whether a company is recommended by a particular AI assistant.**
+
+Then:
+
+### The benchmark evaluates signals such as:
+
+- Entity clarity
+- Product and service clarity
+- Target audience clarity
+- Answer-ready content
+- FAQ coverage
+- Original data and research
+- Citation quality
+- Author and expert signals
+- First-party proof
+- Comparison and alternative content
+- Topical depth
+- Internal linking
+- Structured extractability
+- Entity consistency
+- Content freshness
+
+---
+
+# 13. CREATE THE 15-DIMENSION SECTION
+
+Create:
+
+## The 15 AI Search Readiness Dimensions
+
+Present all 15 in a clean grid.
+
+Each card should contain a concise definition.
+
+### 1. Entity Clarity
+How clearly the website explains who the company is and what it does.
+
+### 2. Product & Service Clarity
+How explicitly products, services and capabilities are described.
+
+### 3. Target Audience Clarity
+Whether industries, roles, company types and use cases are clearly identified.
+
+### 4. Answer-Ready Content
+Whether the site provides direct, concise answers to buyer questions.
+
+### 5. FAQ Coverage
+The depth and usefulness of question-and-answer content.
+
+### 6. Original Data & Research
+Presence of first-party studies, benchmarks, surveys or proprietary data.
+
+### 7. Citation Quality
+Use of authoritative external sources within substantive informational content.
+
+### 8. Author & Expert Signals
+Clear authorship, expert attribution, biographies and relevant credentials.
+
+### 9. First-Party Proof
+Case studies, customer evidence and measurable outcomes.
+
+### 10. Comparison & Alternative Content
+Useful buyer-oriented comparison, alternative and selection content.
+
+### 11. Topical Depth
+Breadth and depth of meaningful coverage around the company's primary category.
+
+### 12. Internal Linking
+Contextual connections between informational, research and commercial content.
+
+### 13. Structured Extractability
+Clear headings, concise explanations, lists, tables and structured sections.
+
+### 14. Entity Consistency
+Consistency in company, product and positioning information throughout the site.
+
+### 15. Content Freshness
+Evidence that substantive content and information are actively maintained.
+
+---
+
+# 14. CONNECT THE STUDY TO AEO
+
+Create a section after the findings:
+
+## What This Means for Answer Engine Optimization
+
+Copy:
+
+**The benchmark highlights why Answer Engine Optimization (AEO) involves more than adding schema markup or publishing FAQs. Websites need clear entities, extractable answers, supporting evidence, first-party expertise and consistent information if they want their content to be easier for answer systems to interpret and attribute.**
+
+Then:
+
+**DigiPuush provides AEO services in India for companies that want to improve these signals across their websites and content programs.**
+
+Link only the phrase:
+
+**AEO services in India**
+
+to the EXISTING DigiPuush AEO services route.
+
+IMPORTANT:
+
+Inspect the codebase and determine the existing canonical AEO service URL.
+
+It is expected to be similar to:
+
+`/services/aeo-services`
+
+but DO NOT create a second AEO route if one already exists.
+
+Use the existing canonical URL.
+
+CTA:
+
+**Explore DigiPuush AEO Services →**
+
+---
+
+# 15. DO NOT OVER-PROMOTE
+
+The research page should remain research-first.
+
+Do not insert repeated lead-generation banners between sections.
+
+Use only:
+
+1. One contextual AEO link in the body.
+2. One CTA near the conclusion.
+3. Existing global/footer CTA if already part of the site.
+
+The page should not look like a disguised sales landing page.
+
+---
+
+# 16. GOOGLE VISIBILITY VS AI SEARCH READINESS SECTION
+
+Add:
+
+## Google Visibility and AI Search Readiness Are Different Measurements
+
+Copy:
+
+**Companies included in the benchmark were identified through predefined commercial Google searches. The subsequent readiness analysis examined different website characteristics: how clearly company information, answers, expertise, evidence and content structure could be extracted and understood.**
+
+**A strong traditional search presence should therefore not be interpreted as automatically producing a strong AI Search Readiness Score, and the benchmark does not claim that one directly causes the other.**
+
+Do not create a correlation coefficient unless an approved value has been provided.
+
+Do not invent statistics.
+
+---
+
+# 17. METHODOLOGY
+
+Add a substantial:
+
+## Methodology
+
+Use subsections.
+
+### Company Selection
+
+**DigiPuush analyzed 50 B2B companies across five software and business-technology categories: CRM, HRMS and payroll, accounting and ERP, customer support and helpdesk, and logistics and fulfilment.**
+
+**Companies were identified using predefined commercial Google searches targeted to India and selected according to the benchmark's documented organic-visibility methodology.**
+
+### Website Collection
+
+**Publicly accessible website pages were collected and classified into relevant page types including company, product, solution, informational, research, case-study, FAQ and comparison content. Low-value and non-substantive pages were excluded from readiness evidence.**
+
+### Scoring
+
+**Each company was evaluated across 15 predefined readiness dimensions. Each dimension used a 0–4 evidence-based scale, with higher scores requiring stronger and more consistently demonstrated evidence across relevant website content.**
+
+**The 15 dimension scores were converted into a 100-point AI Search Readiness Score.**
+
+### Quality Controls
+
+**The methodology includes crawl-coverage validation, evidence requirements and manual quality-assurance review for incomplete or ambiguous observations.**
+
+Do not expose unnecessary implementation internals such as API keys.
+
+---
+
+# 18. LIMITATIONS
+
+Create:
+
+## Important Limitations
+
+Display prominently, not buried in tiny footer text.
+
+Use:
+
+- The benchmark evaluates publicly accessible website characteristics only.
+- It does not measure actual ranking or recommendation frequency within ChatGPT, Gemini, Perplexity, Google AI Mode or other AI platforms.
+- Search results and websites change over time.
+- Crawl coverage can vary between websites.
+- The study covers a defined 50-company B2B technology sample and is not representative of every company in India.
+- Readiness criteria involve structured evaluation and quality judgments despite predefined scoring rules and QA controls.
+- Results describe the research period and should not be treated as permanent company ratings.
+
+---
+
+# 19. PUBLICATION SNAPSHOT NOTE
+
+Near Methodology add:
+
+**Publication snapshot**
+
+**The figures on this page reflect the aggregate benchmark dataset selected for the initial 2026 publication. Company-level quality assurance may continue after publication without altering the aggregate snapshot quoted in this report unless DigiPuush publishes a clearly dated revision.**
+
+This protects the original PR statistics from silently changing.
+
+---
+
+# 20. AUTHOR / RESEARCH OWNER
+
+Create:
+
+## About the Research
+
+Use the existing site's author/brand components where possible.
+
+Author:
+
+**Anil Gorraladaku**
+
+Role:
+
+**Founder, DigiPuush**
+
+Organization:
+
+**DigiPuush**
+
+Do not invent academic qualifications.
+
+Use the existing author biography from the DigiPuush website if a reusable component already exists.
+
+---
+
+# 21. ABOUT DIGIPUUSH
+
+Add concise boilerplate:
+
+## About DigiPuush
+
+**DigiPuush is an AI-first digital marketing agency based in Bangalore, India, specializing in Answer Engine Optimization, Generative Engine Optimization, AI SEO and traditional search strategy.**
+
+Link:
+
+**Answer Engine Optimization**
+
+to the existing AEO service page.
+
+Do not over-repeat exact commercial keywords.
+
+---
+
+# 22. FINAL CTA
+
+Use the site's existing CTA design.
+
+Heading:
+
+## Is Your Website Ready for AI Search?
+
+Copy:
+
+**See how your website performs across the same types of signals examined in the DigiPuush AI Search Readiness Benchmark.**
+
+Primary CTA:
+
+**Get a Free AI Visibility Audit**
+
+Use the existing destination/action already used elsewhere on DigiPuush.
+
+Secondary CTA:
+
+**Explore AEO Services**
+
+linking to the existing AEO services page.
+
+---
+
+# 23. UPDATE EXISTING AEO SERVICE PAGE
+
+Inspect the existing AEO service page.
+
+Do NOT replace or substantially rewrite it.
+
+Do NOT change its URL.
+
+Add one research credibility section somewhere after the initial service explanation and before the final CTA.
+
+Heading:
+
+## Original AEO Research by DigiPuush
+
+Copy:
+
+**DigiPuush's 2026 AI Search Readiness Benchmark analyzed 50 Google-visible B2B websites across 15 factors related to AI discovery, extraction, authority and citation readiness.**
+
+**39 of the 50 websites analyzed — 78% — were classified as Weak or Very Weak under the benchmark framework.**
+
+CTA/link:
+
+**Read the AI Search Readiness Benchmark 2026 →**
+
+Link:
+
+`/research/ai-search-readiness-benchmark-2026`
+
+Preserve the page's primary commercial intent:
+
+**AEO services in India**
+
+---
+
+# 24. AEO SERVICE PAGE SEO
+
+Do not create a new page.
+
+Ensure the existing AEO service page has a title logically equivalent to:
+
+**AEO Services in India | Answer Engine Optimization Agency – DigiPuush**
+
+Preferred H1:
+
+**Answer Engine Optimization (AEO) Services in India**
+
+Only change these if the existing implementation is materially weaker.
+
+Do not blindly replace a well-optimized title without checking existing metadata first.
+
+Primary keyword cluster:
+
+**AEO services in India**
+
+Secondary:
+
+**AEO agency in India**
+
+**AEO services India**
+
+**Answer Engine Optimization services India**
+
+**Answer Engine Optimization agency India**
+
+Do not stuff these terms.
+
+---
+
+# 25. UPDATE AEO PRICING ARTICLE
+
+Existing article:
+
+`/blog/aeo-services-cost-india`
+
+Do not rewrite the article.
+
+Add a contextual research callout after an appropriate early/middle section:
+
+### New DigiPuush Research
+
+**The DigiPuush AI Search Readiness Benchmark 2026 analyzed 50 B2B websites across 15 factors related to answer-engine readiness. 78% of the websites analyzed were classified as Weak or Very Weak.**
+
+Links:
+
+**AI Search Readiness Benchmark 2026**
+→ research page
+
+and a natural contextual link:
+
+**AEO services in India**
+→ existing AEO service page.
+
+Avoid multiple repeated exact-match links.
+
+---
+
+# 26. UPDATE BEST AEO AGENCIES ARTICLE IF PRESENT
+
+Locate the existing article targeting:
+
+**best AEO agencies in India**
+
+Do not create a duplicate if it already exists.
+
+Add a research note:
+
+### DigiPuush 2026 AI Search Research
+
+**DigiPuush recently analyzed 50 Google-visible B2B websites across 15 AI Search Readiness dimensions, including answer-ready content, citation quality, original research and entity clarity.**
+
+Link:
+
+**View the 2026 Benchmark →**
+
+to the research page.
+
+Also ensure this article contains at least one contextual internal link to the existing DigiPuush AEO services page.
+
+---
+
+# 27. HOMEPAGE RESEARCH SECTION
+
+Add a SMALL research section to the homepage.
+
+Do not alter the hero.
+
+Place it after an appropriate authority/results section.
+
+Eyebrow:
+
+**Original Research**
+
+Heading:
+
+## New: DigiPuush AI Search Readiness Benchmark 2026
+
+Copy:
+
+**We analyzed 50 B2B websites across 15 readiness factors. 78% were classified as Weak or Very Weak for AI Search Readiness.**
+
+CTA:
+
+**Explore the Research →**
+
+Do not make this larger than the primary service sections.
+
+---
+
+# 28. SERVICES PAGE
+
+On the main Services page, do not alter existing service descriptions.
+
+If appropriate, add a small text link or research badge near the AEO service card:
+
+**Backed by DigiPuush 2026 AI Search Research**
+
+linking to the research page.
+
+Keep it subtle.
+
+---
+
+# 29. TECHNICAL SEO — SERVER RENDERING
+
+This is extremely important.
+
+The complete research article text, tables and core statistics must exist in the initial server-rendered/static HTML.
+
+Do NOT make critical research content dependent on client-side JavaScript.
+
+Charts may hydrate client-side, but the underlying values must be present in crawlable HTML.
+
+Preserve the site's existing rendering architecture.
+
+---
+
+# 30. CANONICALS
+
+Research hub:
+
+self canonical:
+
+`https://digipuush.com/research`
+
+Benchmark:
+
+self canonical:
+
+`https://digipuush.com/research/ai-search-readiness-benchmark-2026`
+
+Do not canonicalize the research page to the AEO service page.
+
+These pages serve different search intents.
+
+---
+
+# 31. INDEXING
+
+Ensure both new research routes are:
+
+- indexable
+- follow
+- included in XML sitemap
+- linked internally
+- not blocked by robots.txt.
+
+Do not apply noindex.
+
+---
+
+# 32. STRUCTURED DATA
+
+Add valid JSON-LD consistent with the existing implementation.
+
+For the benchmark page include:
+
+## Article or Report-style structured data
+
+Use appropriate schema.org types supported by the project's schema strategy.
+
+Include:
+
+headline
+
+description
+
+datePublished
+
+dateModified
+
+author
+
+publisher
+
+mainEntityOfPage
+
+image if available.
+
+Publisher:
+
+DigiPuush
+
+Author:
+
+Anil Gorraladaku
+
+## BreadcrumbList
+
+Home  
+→ Research  
+→ AI Search Readiness Benchmark 2026
+
+## Dataset
+
+If implemented correctly, add Dataset structured data describing:
+
+name:
+
+DigiPuush AI Search Readiness Benchmark 2026
+
+description
+
+creator:
+
+DigiPuush
+
+temporalCoverage:
+
+2026
+
+spatialCoverage:
+
+India
+
+keywords:
+
+AI Search Readiness, Answer Engine Optimization, AEO, AI search, AI visibility
+
+Do not insert unsupported fabricated fields.
+
+Validate JSON-LD.
+
+---
+
+# 33. OPEN GRAPH / SOCIAL
+
+Benchmark OG title:
+
+**78% of B2B Websites Analyzed Show Weak AI Search Readiness**
+
+OG description:
+
+**DigiPuush analyzed 50 Google-visible B2B websites across 15 AI Search Readiness dimensions. Explore the 2026 benchmark.**
+
+Create/use OG image:
+
+1200 × 630
+
+Design concept:
+
+DIGIPUUSH
+
+AI SEARCH READINESS BENCHMARK 2026
+
+large:
+
+**78%**
+
+caption:
+
+**Weak or Very Weak**
+
+footer:
+
+**50 Companies · 5 Categories · 15 Readiness Factors**
+
+Use existing DigiPuush visual identity.
+
+Do not use fake AI-company logos.
+
+---
+
+# 34. PERFORMANCE
+
+The research page must not degrade Lighthouse performance.
+
+Avoid:
+
+- large animation libraries
+- autoplay video
+- huge JavaScript chart packages if unnecessary
+- layout shifts
+- unnecessary web fonts
+- oversized images.
+
+Charts should use the site's existing chart capability or a lightweight implementation.
+
+Prefer CSS/HTML for simple visualizations where possible.
+
+---
+
+# 35. ACCESSIBILITY
+
+All charts require:
+
+- readable labels
+- text equivalent
+- sufficient contrast
+- keyboard-safe interactions where interactive.
+
+Do not communicate research findings by color alone.
+
+---
+
+# 36. RESEARCH PAGE KEYWORD MAP
+
+The research page should primarily target:
+
+**AI Search Readiness**
+
+**AI Search Readiness Benchmark**
+
+**AEO readiness**
+
+**Answer Engine Optimization benchmark**
+
+**AI-ready websites**
+
+**AI search optimization**
+
+Supporting:
+
+**AI citation readiness**
+
+**answer-ready content**
+
+**AI visibility**
+
+**B2B AI search readiness**
+
+Do NOT make:
+
+`AEO services in India`
+
+the research page's primary keyword.
+
+That keyword belongs to the existing commercial AEO page.
+
+---
+
+# 37. COMMERCIAL PAGE KEYWORD MAP
+
+The existing AEO service page remains responsible for:
+
+PRIMARY:
+
+**AEO services in India**
+
+SECONDARY:
+
+**AEO agency in India**
+
+**AEO services India**
+
+**Answer Engine Optimization services India**
+
+**Answer Engine Optimization agency India**
+
+Research content should strengthen this page through internal authority rather than compete with it.
+
+---
+
+# 38. IMPORTANT LANGUAGE RULES
+
+Use:
+
+**"websites analyzed"**
+
+**"companies in the benchmark"**
+
+**"under the DigiPuush readiness framework"**
+
+Avoid:
+
+**"Indian businesses generally"**
+
+**"all B2B companies"**
+
+**"AI engines prefer"**
+
+**"ChatGPT ignores these companies"**
+
+**"78% are invisible to AI"**
+
+Those claims are not supported.
+
+---
+
+# 39. RESEARCH PAGE DESIGN
+
+Match the existing DigiPuush style.
+
+Desired overall layout:
+
+Breadcrumb
+
+Research eyebrow
+
+H1
+
+Large 78% finding
+
+4 metric cards
+
+Executive Summary
+
+Key Findings
+
+Readiness Distribution
+
+Category Comparison
+
+What AI Search Readiness Means
+
+15 Dimensions
+
+Google Visibility vs Readiness explanation
+
+What This Means for AEO
+
+Methodology
+
+Limitations
+
+About the Research
+
+About DigiPuush
+
+CTA
+
+Footer.
+
+Use whitespace and data visualization generously.
+
+It should look like a serious research report, not a long generic blog post.
+
+---
+
+# 40. CREATE REUSABLE RESEARCH COMPONENTS
+
+If appropriate to the existing architecture, create reusable components such as:
+
+ResearchHero
+
+ResearchStatCard
+
+ResearchFindingCard
+
+ResearchBarChart
+
+ResearchMethodology
+
+ResearchLimitations
+
+ResearchCitation
+
+ResearchCTA
+
+Do not over-engineer if the current codebase uses a simpler pattern.
+
+Follow existing project conventions.
+
+---
+
+# 41. DO NOT BUILD A DOWNLOADABLE PDF YET
+
+For this phase:
+
+Do NOT add:
+
+Download PDF
+
+Download CSV
+
+company ranking download
+
+unless infrastructure already exists and requires almost no new code.
+
+The primary objective is the indexable HTML research report.
+
+We can add downloadable research assets later.
+
+---
+
+# 42. DO NOT BUILD US PAGES IN THIS TASK
+
+This task is exclusively:
+
+**India benchmark + existing AEO authority**
+
+Do not create:
+
+`/us/...`
+
+pages yet.
+
+The US SEO expansion will be handled separately.
+
+---
+
+# 43. VALIDATION BEFORE COMPLETION
+
+Before saying the work is complete, verify:
+
+1. `/research` returns HTTP 200.
+
+2. `/research/ai-search-readiness-benchmark-2026` returns HTTP 200.
+
+3. Benchmark page is server-rendered/indexable.
+
+4. Page source contains the H1 and 78% finding.
+
+5. Canonical is correct.
+
+6. Title and meta description are correct.
+
+7. Sitemap contains both research URLs.
+
+8. Research page links to the existing AEO service page.
+
+9. AEO service page links back to the research page.
+
+10. `/blog/aeo-services-cost-india` contains a research/internal-link callout.
+
+11. Existing best-AEO-agencies article contains research link if that article exists.
+
+12. Homepage includes a small research promotion.
+
+13. No individual company rankings are visible.
+
+14. No unsupported AI-platform ranking claims exist.
+
+15. Structured data validates.
+
+16. Mobile layout works.
+
+17. Lighthouse/performance remains strong.
+
+18. Existing pages have not been visually broken.
+
+---
+
+# 44. FINAL IMPLEMENTATION REPORT
+
+After implementation, provide me a concise report containing:
+
+- files/routes created
+- files/pages modified
+- final research URL
+- canonical URL
+- final title
+- final meta description
+- AEO service page URL used
+- internal links added
+- structured-data types added
+- sitemap update status
+- any assumptions made
+- anything I should manually verify before deployment.
+
+Do NOT make additional unrelated SEO changes.
+
+Do NOT deploy unrelated redesigns.
+
+Implement only the research publishing and AEO authority work described above.

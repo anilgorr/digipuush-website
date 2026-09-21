@@ -1,3 +1,4 @@
 - [Dev build vs bash build collision](dev-build-collision.md) — running `npm run build` from bash clobbers the dev workflow's `.next`; restart the dev workflow after or the preview 500s.
 - [Netlify + pnpm workspace deploy](netlify-pnpm-deploy.md) — must build from repo root with pnpm (npm can't resolve `catalog:`); publish the nested app's `.next`.
 - [Lighthouse audit variance](lighthouse-audit-variance.md) — local Lighthouse TBT varies sharply; use repeated production-build runs and compare representative results.
+- [AI readiness benchmark publication](ai-readiness-benchmark-publication.md) — keep the 2026 benchmark snapshot aggregate-only and frozen unless a dated revision is explicitly published.

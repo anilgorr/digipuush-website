@@ -82,6 +82,7 @@ export const siteConfig = {
       { label: "AEO vs SEO", href: "/aeo-vs-seo" },
       { label: "Pricing", href: "/pricing" },
       { label: "Case Studies", href: "/case-studies" },
+      { label: "Research", href: "/research" },
       { label: "Blog", href: "/blog" },
       { label: "About", href: "/about" },
     ],
