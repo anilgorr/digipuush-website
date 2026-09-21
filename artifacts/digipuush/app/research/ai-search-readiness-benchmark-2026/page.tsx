@@ -163,12 +163,12 @@ export default function BenchmarkPage() {
             understanding and citation.
           </p>
           <p className="mt-5 text-sm" style={{ color: "#8e98aa" }}>
-            Published September 21, 2026 · Aggregate findings only
+            Published September 21, 2026 · Research conducted: September 2026 · Aggregate findings only
           </p>
         </div>
       </header>
 
-      <main>
+      <div>
         <section aria-labelledby="benchmark-overview" className="border-b border-line bg-mist">
           <div className="mx-auto max-w-5xl px-6 py-10">
             <h2 id="benchmark-overview" className="sr-only">
@@ -387,17 +387,75 @@ export default function BenchmarkPage() {
           </Section>
 
           <Section id="methodology" title="Methodology">
-            {[
-              ["Company Selection", "Digipuush analyzed 50 B2B companies across five software and business-technology categories: CRM, HRMS and payroll, accounting and ERP, customer support and helpdesk, and logistics and fulfilment. Companies were identified using predefined commercial Google searches targeted to India and selected according to the benchmark's documented organic-visibility methodology."],
-              ["Website Collection", "Publicly accessible website pages were collected and classified into relevant page types including company, product, solution, informational, research, case-study, FAQ and comparison content. Low-value and non-substantive pages were excluded from readiness evidence."],
-              ["Scoring", "Each company was evaluated across 15 predefined readiness dimensions. Each dimension used a 0–4 evidence-based scale, with higher scores requiring stronger and more consistently demonstrated evidence across relevant website content. The 15 dimension scores were converted into a 100-point AI Search Readiness Score."],
-              ["Quality Controls", "The methodology includes crawl-coverage validation, evidence requirements and manual quality-assurance review for incomplete or ambiguous observations."],
-            ].map(([title, copy]) => (
-              <div key={title}>
-                <h3 className="text-lg font-bold text-navy">{title}</h3>
-                <p className="mt-2">{copy}</p>
+            <p>
+              <strong className="text-navy">Research conducted:</strong> September 2026.
+            </p>
+            <div>
+              <h3 className="text-lg font-bold text-navy">Company Selection</h3>
+              <p className="mt-2">
+                Digipuush analyzed 50 B2B companies across five software and business-technology
+                categories: CRM, HRMS and payroll, accounting and ERP, customer support and
+                helpdesk, and logistics and fulfilment. Companies were identified using predefined
+                commercial Google searches targeted to India and selected according to the
+                benchmark&apos;s documented organic-visibility methodology.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-navy">Website Collection</h3>
+              <p className="mt-2">
+                Publicly accessible website pages were collected and classified into relevant page
+                types including company, product, solution, informational, research, case-study,
+                FAQ and comparison content. Low-value and non-substantive pages were excluded from
+                readiness evidence.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-navy">Scoring</h3>
+              <p className="mt-2">
+                Each company was evaluated across 15 predefined readiness dimensions. Each
+                dimension used a 0–4 evidence-based scale, with higher scores requiring stronger
+                and more consistently demonstrated evidence across relevant website content. The
+                15 dimension scores were converted into a 100-point AI Search Readiness Score.
+              </p>
+              <div className="mt-5 overflow-x-auto rounded-2xl border border-line">
+                <table className="w-full min-w-[30rem] border-collapse text-left text-sm">
+                  <caption className="sr-only">
+                    AI Search Readiness Score classification thresholds
+                  </caption>
+                  <thead className="bg-mist text-navy">
+                    <tr>
+                      <th scope="col" className="px-5 py-3 font-semibold">Score</th>
+                      <th scope="col" className="px-5 py-3 font-semibold">Classification</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ["80–100", "Very Strong"],
+                      ["65–79.9", "Strong"],
+                      ["50–64.9", "Moderate"],
+                      ["35–49.9", "Weak"],
+                      ["Below 35", "Very Weak"],
+                    ].map(([score, classification]) => (
+                      <tr key={score} className="border-t border-line">
+                        <td className="px-5 py-3 font-semibold tabular-nums text-navy">{score}</td>
+                        <td className="px-5 py-3 text-slate">{classification}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            ))}
+              <p className="mt-5">
+                The headline 78% figure represents the 39 websites whose final scores fell below
+                50, placing them in the Weak or Very Weak classifications.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-navy">Quality Controls</h3>
+              <p className="mt-2">
+                The methodology includes crawl-coverage validation, evidence requirements and
+                manual quality-assurance review for incomplete or ambiguous observations.
+              </p>
+            </div>
             <div className="rounded-2xl border border-orange/30 bg-orange/5 p-5">
               <h3 className="font-bold text-navy">Publication snapshot</h3>
               <p className="mt-2 text-sm leading-7">
@@ -463,7 +521,7 @@ export default function BenchmarkPage() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }
