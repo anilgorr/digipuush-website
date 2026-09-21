@@ -44,6 +44,7 @@ export function Footer() {
               {[
                 { label: "About", href: "/about" },
                 { label: "Case Studies", href: "/case-studies" },
+                { label: "Research", href: "/research" },
                 { label: "Pricing", href: "/pricing" },
                 { label: "Blog", href: "/blog" },
                 { label: "Contact", href: "/contact" },

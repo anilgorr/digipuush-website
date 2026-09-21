@@ -24,7 +24,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
           <div
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
