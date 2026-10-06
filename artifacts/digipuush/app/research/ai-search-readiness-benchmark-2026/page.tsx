@@ -123,6 +123,7 @@ export default function BenchmarkPage() {
         name: siteConfig.name,
       },
       url: reportUrl,
+      license: "https://creativecommons.org/licenses/by/4.0/",
       temporalCoverage: "2026",
       spatialCoverage: { "@type": "Place", name: "India" },
       keywords: [
@@ -521,6 +522,10 @@ export default function BenchmarkPage() {
             </div>
           </div>
         </section>
+        <p className="mx-auto max-w-5xl px-6 py-6 text-sm leading-relaxed text-slate">
+          This dataset is published under a Creative Commons Attribution 4.0 licence. You&apos;re free to cite and
+          reuse it with credit to Digipuush.
+        </p>
       </div>
     </>
   );
