@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PricingTable } from "@/components/PricingTable";
 import { FAQSection } from "@/components/FAQSection";
@@ -85,6 +86,17 @@ export default function PricingPage() {
         <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-slate">
           No hidden fees, no long lock-ins. Choose the package that matches whether you need
           AI visibility alone, or AI visibility combined with full technical SEO.
+        </p>
+        <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-slate">
+          Want to see how these compare with the wider market? Read our{" "}
+          <Link href="/blog/aeo-services-cost-india" className="font-semibold text-orange-dark hover:underline">
+            AEO services cost guide
+          </Link>{" "}
+          for typical Indian agency pricing tiers, or our guide to{" "}
+          <Link href="/blog/best-aeo-agencies-india" className="font-semibold text-orange-dark hover:underline">
+            choosing an AEO agency
+          </Link>{" "}
+          for the questions to ask before you sign with anyone — including us.
         </p>
         <div className="mt-10">
           <PricingTable />

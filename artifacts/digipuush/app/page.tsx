@@ -349,6 +349,13 @@ export default function HomePage() {
           <h2 className="mt-2 max-w-2xl text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
             Simple, transparent monthly packages
           </h2>
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-slate">
+            Not sure what AEO should cost? Our guide to{" "}
+            <Link href="/blog/aeo-services-cost-india" className="font-semibold text-orange-dark hover:underline">
+              AEO services cost in India
+            </Link>{" "}
+            breaks down typical agency pricing tiers so you can judge these packages against the market.
+          </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {[siteConfig.pricing.aeoGeo, siteConfig.pricing.seoAeoGeo].map((plan) => {
               const highlighted = "highlighted" in plan && plan.highlighted;
