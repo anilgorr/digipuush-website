@@ -7,3 +7,23 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Force HTTPS + apex host so Search Console stops reporting http://digipuush.com/
+# as a separate page. Netlify normally does this automatically; this makes it explicit.
+[[redirects]]
+  from = "http://digipuush.com/*"
+  to = "https://digipuush.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.digipuush.com/*"
+  to = "https://digipuush.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.digipuush.com/*"
+  to = "https://digipuush.com/:splat"
+  status = 301
+  force = true
