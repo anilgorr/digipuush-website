@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { MDXContent } from "@/components/MDXContent";
 import { getCaseStudySlugs, getCaseStudyContent } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
+import { withSocial } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return getCaseStudySlugs().map((slug) => ({ slug }));
@@ -30,11 +31,16 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = getData(slug);
   if (!data) return {};
-  return {
+  return withSocial({
     title: data.frontmatter.title,
     description: data.frontmatter.description,
     alternates: { canonical: `/case-studies/${slug}` },
-  };
+    openGraph: {
+      type: "article",
+      publishedTime: data.frontmatter.datePublished,
+      modifiedTime: data.frontmatter.dateModified,
+    },
+  });
 }
 
 export default async function CaseStudyPage({

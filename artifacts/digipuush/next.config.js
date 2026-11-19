@@ -54,6 +54,11 @@ const nextConfig = {
       { source: '/virtual-reality-companies-in-india', destination: '/blog', permanent: true },
       { source: '/category/digital-marketing', destination: '/blog', permanent: true },
       { source: '/nproject-category/:slug', destination: '/case-studies', permanent: true },
+      // WordPress/Yoast endpoints Google and feed readers still request
+      { source: '/sitemap_index.xml', destination: '/sitemap.xml', permanent: true },
+      { source: '/page-sitemap.xml', destination: '/sitemap.xml', permanent: true },
+      { source: '/post-sitemap.xml', destination: '/sitemap.xml', permanent: true },
+      { source: '/feed', destination: '/rss.xml', permanent: true },
     ];
   },
 };

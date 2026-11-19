@@ -4,13 +4,14 @@ import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABanner } from "@/components/CTABanner";
 import { getAllCaseStudies } from "@/lib/content";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "SEO, AEO & GEO Case Studies",
   description:
     "See how Digipuush has helped Indian businesses grow organic traffic and AI citations through AEO, GEO, and SEO.",
   alternates: { canonical: "/case-studies" },
-};
+});
 
 export default function CaseStudiesPage() {
   const caseStudies = getAllCaseStudies();

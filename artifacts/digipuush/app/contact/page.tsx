@@ -3,13 +3,14 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { siteConfig } from "@/lib/site";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "Contact Digipuush Bangalore",
   description:
     "Get in touch with Digipuush for a free AI visibility audit covering Google search and AI answer engines like ChatGPT and Perplexity.",
   alternates: { canonical: "/contact" },
-};
+});
 
 export default function ContactPage() {
   return (

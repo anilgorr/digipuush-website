@@ -7,13 +7,14 @@ import { CTABanner } from "@/components/CTABanner";
 import { PlatformCloud } from "@/components/PlatformCloud";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { siteConfig } from "@/lib/site";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "SEO Company in Bangalore",
   description:
     "Digipuush is an SEO company in Bangalore helping local and national businesses rank higher on Google and get cited by AI search tools.",
   alternates: { canonical: "/seo-company-in-bangalore" },
-};
+});
 
 const faqs = [
   {

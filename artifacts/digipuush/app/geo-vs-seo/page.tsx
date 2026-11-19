@@ -7,13 +7,14 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { CTABanner } from "@/components/CTABanner";
 import { PlatformCloud } from "@/components/PlatformCloud";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "GEO vs SEO: What's the Difference?",
   description:
     "A clear comparison of Generative Engine Optimization (GEO) and traditional SEO — what each optimizes for, and how they work together.",
   alternates: { canonical: "/geo-vs-seo" },
-};
+});
 
 const rows = [
   { label: "Primary goal", left: "Rank in the search results list", right: "Be accurately represented in AI summaries" },

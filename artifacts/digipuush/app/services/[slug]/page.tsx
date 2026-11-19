@@ -12,6 +12,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { LeadForm } from "@/components/LeadForm";
 import { getServiceSlugs, getServiceContent } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
+import { withSocial } from "@/lib/metadata";
 
 const LEAD_FORM_SLUGS = new Set(["aeo-services", "geo-services"]);
 
@@ -35,11 +36,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = getData(slug);
   if (!data) return {};
-  return {
+  return withSocial({
     title: data.frontmatter.title,
     description: data.frontmatter.description,
     alternates: { canonical: `/services/${slug}` },
-  };
+  });
 }
 
 export default async function ServicePage({

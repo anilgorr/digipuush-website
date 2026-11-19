@@ -6,13 +6,14 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { CTABanner } from "@/components/CTABanner";
 import { PlatformCloud } from "@/components/PlatformCloud";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "eCommerce SEO Services India",
   description:
     "Digipuush provides eCommerce SEO services covering category and product page optimization, technical SEO, and AI shopping visibility for Indian online stores.",
   alternates: { canonical: "/ecommerce-seo-services" },
-};
+});
 
 const faqs = [
   {
