@@ -27,3 +27,220 @@
   to = "https://digipuush.com/:splat"
   status = 301
   force = true
+
+# Legacy WordPress URLs. Every old URL ended in a trailing slash, and Next.js
+# strips the slash (308) before it applies its own redirects, so the copies in
+# next.config.js take two hops: /about-us/ -> /about-us -> /about. Netlify
+# evaluates these rules first and matches with or without the trailing slash,
+# so each old URL reaches its new page in a single 301.
+# Keep this list in sync with redirects() in artifacts/digipuush/next.config.js.
+
+[[redirects]]
+  from = "/about-us"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about-us/our-team"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/brand-strategy"
+  to = "/services/branding-creative"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/digital-marketing"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/website-design"
+  to = "/services/website-development"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/website"
+  to = "/services/website-development"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/website-landing-page"
+  to = "/services/website-development"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/search-engine-optimization"
+  to = "/services/seo"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/social-media-marketing"
+  to = "/services/social-media-marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/social-media-marketing-services"
+  to = "/services/social-media-marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/influencer-marketing"
+  to = "/services/social-media-marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/performance-marketing"
+  to = "/services/paid-marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ppc-services-pay-per-click"
+  to = "/services/paid-marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lead-generation-services"
+  to = "/services/paid-marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/content-marketing"
+  to = "/services/geo-services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creative"
+  to = "/services/branding-creative"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/video-animation"
+  to = "/services/branding-creative"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/work"
+  to = "/case-studies"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/thank-you-web-development"
+  to = "/thank-you"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/test"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/home-2"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog-2"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services-2"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/facebook-ads-advertising-promotion-cost-india"
+  to = "/blog/facebook-ads-cost-india"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/what-is-digital-media-marketing"
+  to = "/blog/what-is-digital-marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/online-reputation-management-services-orm-services"
+  to = "/blog/online-reputation-management-services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/advantages-and-disadvantages-of-social-media"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/grow-your-business-with-digital-marketing"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/virtual-reality-companies-in-india"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/digital-marketing"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/nproject-category/*"
+  to = "/case-studies"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sitemap_index.xml"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/page-sitemap.xml"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/post-sitemap.xml"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feed"
+  to = "/rss.xml"
+  status = 301
+  force = true

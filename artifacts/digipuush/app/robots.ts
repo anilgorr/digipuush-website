@@ -7,7 +7,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/thank-you/", "/api/"],
+        // /thank-you is kept out of the index by its own noindex tag. Do not
+        // also disallow it here: a blocked page's noindex can never be read.
+        disallow: ["/api/"],
       },
       { userAgent: "GPTBot", allow: "/" },
       { userAgent: "ChatGPT-User", allow: "/" },

@@ -10,15 +10,16 @@ import { PlatformCloud } from "@/components/PlatformCloud";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site";
+import { withSocial } from "@/lib/metadata";
 
 const LAST_UPDATED = "2026-11-09";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "AEO vs SEO: Key Differences, Costs & When You Need Both (2026)",
   description:
     "SEO gets your page ranked in Google's list; AEO gets your brand quoted inside ChatGPT, Perplexity, Gemini and AI Overviews. Side-by-side differences, what each costs in India, and which to invest in first.",
   alternates: { canonical: "/aeo-vs-seo" },
-};
+});
 
 const rows = [
   { label: "Primary goal", left: "Rank in the search results list", right: "Be cited as the direct answer" },

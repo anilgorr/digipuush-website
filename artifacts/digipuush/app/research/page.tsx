@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BarChart3 } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: { absolute: "Digipuush Research | AI Search, AEO & AI Visibility Studies" },
   description:
     "Original Digipuush research on AI search, Answer Engine Optimization, AI visibility and how brands are preparing for answer-engine discovery.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Original Digipuush research on AI search, Answer Engine Optimization, AI visibility and how brands are preparing for answer-engine discovery.",
     url: "/research",
   },
-};
+});
 
 export default function ResearchPage() {
   return (

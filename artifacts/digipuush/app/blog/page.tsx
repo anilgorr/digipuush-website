@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogCard } from "@/components/BlogCard";
 import { getAllBlogPosts } from "@/lib/content";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "AEO, GEO & SEO Blog India",
   description:
     "Guides on AEO, GEO, SEO, and digital marketing in India from the Digipuush team.",
   alternates: { canonical: "/blog" },
-};
+});
 
 export default function BlogPage() {
   const posts = getAllBlogPosts();

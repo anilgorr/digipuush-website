@@ -11,13 +11,14 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "Book an AEO & GEO Strategy Session",
   description:
     "Book an AEO and GEO strategy session with Digipuush founder Anil Gorraladaku to discuss your brand's visibility across ChatGPT, Perplexity, Gemini, and Google AI Overviews.",
   alternates: { canonical: "/aeo-geo-consultation" },
-};
+});
 
 const calendlyUrl = "https://calendly.com/anilgorraladaku/aeo-geo";
 

@@ -4,13 +4,14 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABanner } from "@/components/CTABanner";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "About Digipuush & Anil Gorraladaku",
   description:
     "Digipuush is an AI-first digital marketing agency founded by Anil Gorraladaku, based in Bangalore, India.",
   alternates: { canonical: "/about" },
-};
+});
 
 export default function AboutPage() {
   const { founder } = siteConfig;

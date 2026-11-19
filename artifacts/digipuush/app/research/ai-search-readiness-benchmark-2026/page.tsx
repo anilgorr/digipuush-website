@@ -5,6 +5,7 @@ import { AuthorBox } from "@/components/AuthorBox";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site";
+import { withSocial } from "@/lib/metadata";
 
 const reportPath = "/research/ai-search-readiness-benchmark-2026";
 const reportUrl = `${siteConfig.url}${reportPath}`;
@@ -46,7 +47,7 @@ const limitations = [
   "Results describe the research period and should not be treated as permanent company ratings.",
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: { absolute: "AI Search Readiness Benchmark 2026 | Digipuush Research" },
   description:
     "Digipuush analyzed 50 Google-visible B2B websites across 15 AI search readiness factors. 78% scored Weak or Very Weak in the 2026 benchmark.",
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
       "Digipuush analyzed 50 Google-visible B2B websites across 15 AI Search Readiness dimensions.",
     images: [`${reportPath}/opengraph-image`],
   },
-};
+});
 
 function Section({
   id,

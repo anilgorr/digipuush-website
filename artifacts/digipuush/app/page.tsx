@@ -26,8 +26,9 @@ import { BentoGrid, BentoCard } from "@/components/ui/BentoGrid";
 import { ViewportAnimations } from "@/components/ui/ViewportAnimations";
 import { siteConfig } from "@/lib/site";
 import { getServiceSlugs, getServiceContent } from "@/lib/content";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: { absolute: "AI-First Digital Marketing Agency in India | Digipuush" },
   description: siteConfig.description,
   alternates: { canonical: "/" },
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     title: "AI-First Digital Marketing Agency in India | Digipuush",
     description: siteConfig.description,
   },
-};
+});
 
 const homeFaqs = [
   {

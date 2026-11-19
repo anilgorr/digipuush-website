@@ -7,13 +7,14 @@ import { LeadForm } from "@/components/LeadForm";
 import { CTABanner } from "@/components/CTABanner";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site";
+import { withSocial } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: "AEO, GEO & SEO Pricing India",
   description:
     "Digipuush pricing: AEO + GEO packages start at ₹25,000/month, and combined SEO + AEO + GEO packages start at ₹40,000/month.",
   alternates: { canonical: "/pricing" },
-};
+});
 
 const faqs = [
   {
